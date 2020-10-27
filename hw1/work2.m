@@ -15,7 +15,7 @@ R2=sqrt((X-2).^2+Y.^2);                                  % 计算场域中各点
 V1=k*Q1./R1;                                                % 计算场域中各点因点电荷q1产生的电位
 V2=k*Q2./R2;                                                % 计算场域中各点因点电荷q2产生的电位
 V=V1+V2;                                                    % 将由q1和q2产生的电位叠加
-figure(1);                                                  % 在图像窗口1绘图
+figure();                                                  % 在图像窗口1绘图
 mesh(X,Y,V);                                                % 绘制出电位的分布图
 hold on;                                                    % 保持图形                                                 
 title('真空中两个等量异性点电荷的电场线(11910103 秦庆福)','fontsize',20);      % 绘制出图形标题
@@ -43,8 +43,8 @@ xs1=0.1*cos(theta)-2;                                  % 从q1生成电力线的
 xs2=0.1*cos(theta)+2;                                  % 从q2生成电力线的x轴坐标
 ys=0.1*sin(theta);                                        % q1,q2生成电力线的y轴坐标
 figure(3);                                                  % 在图像窗口3绘图
-streamline(X,Y,Ex,Ey,xs1,ys);                               % 生成q1产生的电力线
-streamline(X,Y,-Ex,-Ey,xs2,ys);                               % 生成q2产生的电力线
+streamline(X(:,1:1:31),Y(:,1:1:31),Ex(:,1:1:31),Ey(:,1:1:31),xs1,ys);                               % 生成q1产生的电力线
+streamline(X(:,30:1:60),Y(:,30:1:60),-Ex(:,30:1:60),-Ey(:,30:1:60),xs2,ys);                               % 生成q2产生的电力线
 grid on;                                                    % 形成网格
 hold on;                                                    % 保持图形
 contour(X,Y,V,Veq);                                         % 绘制等势线
