@@ -1,25 +1,25 @@
-function [V] = V_det(ro,xa,ya,xb,yb,X,Y,pn,n)
-%V_DET 此处显示有关此函数的摘要
-%   此处显示详细说明
-k=9e9;                   % 设置静电力衡量
-l = sqrt((xa-xb).^2+(ya-yb).^2);
+function [V] = V_det(ro,xa,xb,N,n,X,Y)
+% V_DET is the function to calculte the electric feild distribution .
+%   ro is the line charge density
+%   xa and xb is the x-coordinate of the endpoints
+k = 9e9;                   % set the
+l = 2; %set ht
+dq = ro * l / N;
+qx = linspace(xa,xb,N);   % set the x-coordinate of charge segments
 
-dq = ro * l / n;
-qx = linspace(xa,xb,n);   % 形成点电荷的横坐标
-qy = linspace(ya,yb,n);   % 形成点电荷的纵坐标
 
-
-V = zeros(n,pn,pn);        % 让场域各点由不同点电荷产生的电场存在V中
+V = zeros(N,n,n);        % 让场域各点由不同点电荷产生的电场存在V中
 
 i = 1;
-for s = qx
-    ss = qy(i);
-    r = sqrt((X-s).^2+((Y-ss).^2)); % 计算场域各点到点电荷距离
-    V(i,:,:) = k * dq ./ r;
+for qxi = qx
+    r = sqrt((X-qxi).^2+(Y.^2)); % calculate the distace to each charge point
+    V(i,:,:) = 1 ./ r;
     i = i +1;
 end
 
-V = sum(V);
-V = reshape(V,pn,pn);
+V = sum(V);  % calculate the sum of reciprocal of the distances 
+V = reshape(V,n,n); % reshape matrix to two demension
+V = k*dq.*V;
+
 end
 

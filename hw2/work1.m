@@ -1,11 +1,10 @@
-clear;                  % 清空内存中所有变量
-clc;                    % 清空命令窗口中的内容
-l = 2;                  % 设置AB长度为2
-ro = 1e-9;              % 设置线电荷密度
-k=9e9;                   % 设置静电力衡量
-n= 100;
-pn = 100;
-dq = ro * l / n;       % 将线电荷分成n份（视为n个点电荷）
+clear;                  % clear memory
+clc;                    % clear shell
+l = 2;                  % set length
+ro = 1e-9;              % set charge density
+k=9e9;                   % set value of
+n= 100;                % set degree of seperation
+pn = 100;               % set accuarcy of
 xa = -1;                % 设置A点横坐标
 xb = 1;                 % 设置B点横坐标
 %
@@ -32,7 +31,7 @@ hold on;                                                    % 保持图形
 title('真空中两个等量同性点电荷的等电位线(11910103 秦庆福)','fontsize',20);         % 绘制出图形标题
 xlabel('X轴(单位：m)','fontsize',15);                         % 绘制出X轴标注
 ylabel('Y轴(单位：m)','fontsize',15);                         % 绘制出Y轴标注
-hold off; 
+hold off;
 %
 [Ex,Ey]=gradient(-V);                                       % 计算场域各点的电力强度的两个分量
 del_theta=15;                                               % 设置相邻电力线间的角度差
@@ -47,14 +46,14 @@ contour(X,Y,V,Veq);                                         % 绘制等势线
 title('真空中两个等量同性点电荷的等电位线及电场线（用光滑连续曲线表示）(11910103 秦庆福)','fontsize',20);    % 绘制出图形标题
 xlabel('X轴(单位：m)','fontsize',12);                         % 绘制出X轴标注
 ylabel('Y轴(单位：m)','fontsize',12);                         % 绘制出注
-hold off;    
+hold off;
 %
 E=sqrt(Ex.^2+Ey.^2);                                        % 计算各点的电场强度的幅值
 Exs=Ex./E;
 Eys=Ey./E;                                                  % 归一化电场强度
-Xs=X(:,1:4:pn);                                             
+Xs=X(:,1:4:pn);
 Xs=Xs(1:4:pn,:);                                            % 分别缩减箭头横坐标点至21*21
-Ys=Y(:,1:4:pn); 
+Ys=Y(:,1:4:pn);
 Ys=Ys(1:4:pn,:);                                            % 分别缩减箭头纵坐标点至21*21
 Exs=Exs(:,1:4:pn);
 Exs=Exs(1:4:pn,:);                                          % 分别缩减对应坐标的电场强度的X分量的数量
@@ -66,4 +65,4 @@ hold on;                                                    % 保持图形
 contour(X,Y,V,Veq);                                         % 绘制等势线
 xlabel('X轴(单位：m)','fontsize',15);                         % 绘制出X轴标注
 ylabel('Y轴(单位：m)','fontsize',15);                         % 绘制出Y轴标注
-hold off; 
+hold off;

@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/Debian) (preloaded format=xelatex 2020.11.18)  22 NOV 2020 20:48
+This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/Debian) (preloaded format=xelatex 2020.11.18)  24 NOV 2020 18:41
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -82,8 +82,7 @@ File: l3backend-xdvipdfmx.def 2020-02-03 L3 backend support: xdvipdfmx
 \l__pdf_internal_box=\box47
 \g__pdf_backend_object_int=\count179
 \g__pdf_backend_annotation_int=\count180
-)
-No file bare_jrnl.aux.
+) (./bare_jrnl.aux)
 \openout1 = `bare_jrnl.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 353.
@@ -96,7 +95,7 @@ LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 353.
 LaTeX Font Info:    ... okay on input line 353.
 LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 353.
 LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 353.
-(/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
+ (/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
 LaTeX Font Info:    ... okay on input line 353.
@@ -233,14 +232,11 @@ LaTeX Font Warning: Font shape `TU/ptm/b/n' undefined
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
  ) 
 Here is how much of TeX's memory you used:
- 1214 strings out of 479819
- 24509 string characters out of 5895845
- 269489 words of memory out of 5000000
+ 1216 strings out of 479819
+ 24537 string characters out of 5895845
+ 269492 words of memory out of 5000000
  18390 multiletter control sequences out of 15000+600000
  535177 words of font info for 46 fonts, out of 8000000 for 9000
  1351 hyphenation exceptions out of 8191

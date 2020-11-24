@@ -1,9 +1,9 @@
-clear;                  % 清空内存中所有变量
-clc;                    % 清空命令窗口中的内容
-ro = 1e-9;              % 设置线电荷密度
-k=9e9;                   % 设置静电力衡量
-n= 50;                 % 拟合精度（将线电荷分成n份）
-pn = 100;               % 横纵坐标精度（将横纵坐标分为pn份）
+clear;                  % clear memory
+clc;                    % clear screen
+ro = 1e-9;              % set charge density
+k=9e9;                   % set
+n= 20;                 % 拟合精度（将线电荷分成n份）
+pn = 10;               % 横纵坐标精度（将横纵坐标分为pn份）
 %假设线电荷在A，B两点之间
 xa = -1;                % 设置A点横坐标
 ya = 0;                 % 设置A点纵坐标
