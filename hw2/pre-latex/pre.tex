@@ -1,32 +1,47 @@
 \documentclass[10pt, journal]{IEEEtran}
 
-\hyphenation{op-tical net-works semi-conduc-tor}
 
 \usepackage[T1]{fontenc} 
 \usepackage{amsmath}
 \usepackage[cmintegrals]{newtxmath}
 \usepackage{bm}
-
-
+\usepackage{listings}
+\usepackage[framed,numbered,autolinebreaks,useliterate]{mcode}
 
 \begin{document}
 \title{Engineering Electromagnetics - Experiment 2\\ Electromagnetics of Line Charge}
-\author{\IEEEauthorblockN{QingFu~Qin}, 
-\IEEEauthorblockA{Southern University of Science and Technology, ShengZhen, GuangDong}\\
-\IEEEauthorblockA{Email: 11910103@mail.sustech.edu.cn}
-        
-% \thanks{Mr.Jia was with the Department
-% of Electrical and Computer Engineering, Georgia Institute of Technology, Atlanta,
-% GA, 30332 USA e-mail: (see http://www.michaelshell.org/contact.html).}
+\author{\IEEEauthorblockN{QingFu~Qin},
+    \IEEEauthorblockA{Southern University of Science and Technology, ShengZhen, GuangDong}\\
+    \IEEEauthorblockA{Email: 11910103@mail.sustech.edu.cn}
+
 }
 
 \maketitle
 
-
 \begin{abstract}
     This article describes the electric feild of the line charge which lenth is 2.
-    By using MATLAB to simulate the electric feild and draw the picture of 
-    analysis the difference between two  
+    By using MATLAB to simulate the electric feild and draw the pictures;
+    Using integration method 
 \end{abstract}
+\section{
+  Introduction
+ }
+\label{sec:Intro}
+
+
+\section{
+  Related Knowledge and MATLAB Code
+ }
+
+
+% \lstinputlisting[lastline=45]{../work1.m}
+
+
+\begin{lstlisting}
+	% Plot function f(x) = 2*x^3 - x - 2
+	ezplot('2*x^3-x-2',[0, 2])
+	hold on
+	plot([0,2],[0,0],'r')
+    \end{lstlisting}
 
 \end{document}
