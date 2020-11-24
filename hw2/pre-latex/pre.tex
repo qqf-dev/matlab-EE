@@ -6,6 +6,7 @@
 \usepackage{amsmath}
 \usepackage[cmintegrals]{newtxmath}
 \usepackage{bm}
+\usepackage{graphicx}
 % Using mcode for input code of MATLAB
 \usepackage{listings}
 \usepackage[framed,numbered,autolinebreaks,useliterate]{mcode}
@@ -15,7 +16,7 @@
 
 \begin{document}
 \title{Engineering Electromagnetics - Experiment 2\\ Electric Field of Line Charge}
-\author{\IEEEauthorblockN{QingFu~Qin},
+\author{\IEEEauthorblockN{Qingfu~Qin},
     \IEEEauthorblockA{Southern University of Science and Technology, ShengZhen, GuangDong}\\
     \IEEEauthorblockA{Email: 11910103@mail.sustech.edu.cn}
 }
@@ -45,7 +46,7 @@
 \label{sec:Intro}
 
 \IEEEPARstart{T}{his} experiment is to analyze the electric field of
-the linecharge in a free space. And the objectives of this experiment is:
+the line charge in a free space. And the objectives of this experiment is:
 \begin{itemize}
     \item Calculate the distribution of electric field
           built by continuous line charge
@@ -61,7 +62,7 @@ understand the electric field in a visualized way.\par
 
 Suppose there is a uniformly distributed line charge
 between point A(-1,0) and point B(1,0),
-with linechargedensity of $\rho = 1 \times 10^{-9}$ C/m.
+with line charge density of $\rho = 1 \times 10^{-9}$ C/m.
 (The unit for the coordinate is m)\par
 
 Using integration method in \ref{ method:integration }
@@ -84,9 +85,9 @@ And analyzed the difference at line: $y=0.5$,
 using knowledge of calculus to describe the difference.
 
 \section{
-  Related Knowledge and MATLAB Code
+  Related Knowledge and Functions
  }
-\label{sec:Related and Code}
+\label{sec:Related and Func}
 
 In vaccuum, the electric field intensity ($\mathbf{E}$)
 of a point charge can be expressed as:
@@ -175,68 +176,179 @@ at each point of the coordinate, however, we cannot have infinitesimal in MATLAB
 so we use small segments as infinitesimal.\par
 Set the approximative infinitesimal of distance is $\Delta x = \frac{l}{N}$.
 Where l is the length of line charge $l = x_A - x_B = 2$, N is number of segments.
-Using point charge to replace the segments, 
+Using point charge to replace the segments,
 so the x-coordinates are the midpoints of the segments.
-Each x-coordinate is $x_i = i\Delta x + x_A = \frac{2i}{N} - 1$
+Each x-coordinate is $x_i = i\frac{\Delta x}{2} + x_A = \frac{i}{N} - 1$
 So, the approximate infinitesimal of charge is $\Delta Q = \rho \Delta x$.
 According to equation (4), given a point $(X_0, Y_0)$:
 
 \begin{equation}
     \begin{aligned}
-        V = & \ \sum_{i=1}^N k\frac{\Delta Q}{R_i}                                              \\
-        =   & \ k\rho \Delta x\sum_{i=1}^N \frac{1}{\sqrt{(x_i - X_0)^2+Y_0^2}}                 \\
-        =   & \ k\rho \frac{l}{N}\sum_{i=1}^N \frac{1}{\sqrt{(i\frac{l}{N} - 1 - X_0)^2+Y_0^2}} \\
+        V = & \ \sum_{i=1}^N k\frac{\Delta Q}{R_i}                                             \\
+        =   & \ k\rho \Delta x\sum_{i=1}^N \frac{1}{\sqrt{(x_i - X_0)^2+Y_0^2}}                \\
+        =   & \ k\rho \frac{l}{N}\sum_{i=1}^N \frac{1}{\sqrt{(\frac{i}{N} - 1 - X_0)^2+Y_0^2}} \\
         =   & \ \frac{2k\rho}{N}
-        \sum_{i=1}^N \frac{1}{\sqrt{(\frac{2i}{N} - X_0 - 1)^2+Y_0^2}}                          \\
+        \sum_{i=1}^N \frac{1}{\sqrt{(\frac{i}{N} - X_0 - 1)^2+Y_0^2}}                          \\
     \end{aligned}
 \end{equation}
 
 If we calculate each point of the coordinate.
 \begin{equation}
-    V(x,y) = \frac{2k\rho}{N}\sum_{i=1}^N \frac{1}{\sqrt{(\frac{2i}{N} - x - 1)^2+y^2}} \\
+    V(x,y) = \frac{2k\rho}{N}\sum_{i=1}^N \frac{1}{\sqrt{(\frac{i}{N} - x - 1)^2+y^2}} \\
 \end{equation}
 
 % MATLAB code 
 \subsection{
-    MATLAB code
+    MATLAB Functions
 }
-\label{code}
-All prgramming code included:
+\label{func}
+Functions included:
 \begin{itemize}
     \item 1) function: V\_con
-    \item 2) function: V\_det
-    \item 3) script: work1
-    \item 4) script: work2
-    \item 5) script: work3
+    \item 2) function: V\_dis
 \end{itemize}
 
+% V_con for continuous calculate
 \subsubsection*{
     V\_con
 }
 \label{V_con}
-Using to calculate the electric field distribution
+To calculate the electric field distribution
 by using integration method, namely, it use equation (6) to calculate.
 \lstinputlisting{../V_con.m}
+
+% V_dis for descrete calculate
 \subsubsection*{
-    V\_det
+    V\_dis
 }
-\label{V_det}
-Using to calculate the electric field distribution
+\label{V_dis}
+To calculate the electric field distribution
 by using infinitesimal method, namely, it use equation (8) to calculate.
-\lstinputlisting{../V_det.m}
+\lstinputlisting{../V_dis.m}
 
-\subsection{rs}
-
-
+% work 1
 \section{
   Simulation of Integration Method
  }
+ \label{sec:inte}
+Using MATLAB to describe electric field and draw pictures
+simulated by integration methods.\\
+1. Initialization. Set the coordinates of 4m $\times$ 4m.
+The number of coordinates is 60 $\times$ 60.
+\lstinputlisting[lastline = 14]{../work1.m}
+\label{work1.1}
+
+2. Calculate the electric potential distributionby using \ref{func}: $V\_con$.
+And draw picture of the distribution of electric field.
+\lstinputlisting[firstline = 17, lastline =23]{../work1.m}
+\label{work1.2}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width = 3.4in]{figures/fig1.1.eps}
+    \caption{Distribution of electric potential simulated by integration method}
+    \label{fig:1.1}
+\end{figure}
+
+As Figure~\ref{fig:1.1} shows that,
+the distribution of electric potential is similar to shape of fins.
+But for simulated by matlab,
+the electric potential on the line charge is infinite in fact.\\
+\\
+\\
+3. Draw picture of Isopotential lines.
+Set range of potential is (0, 60) V.
+\lstinputlisting[firstline = 26, lastline =36]{../work1.m}
+\label{work1.3}
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width = 3.4in]{figures/fig1.2.eps}
+    \caption{Isopotential lines simulated by integration method}
+    \label{fig:1.2}
+\end{figure}
+As Figure~\ref{fig:1.2} shows that, the Isopotential lines are ellipse.
+And when coordinate far from line charge, isopotential lines is being more round.
+It is means that the potential distribution of a short line charge
+is close to point charge in some ways.\\
+\\
+4. Draw picture of power lines.
+\lstinputlisting[firstline = 39]{../work1.m}
+\label{work1.4}
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width = 3.4in]{figures/fig1.3.eps}
+    \caption{Isopotential lines simulated by integration method}
+    \label{fig:1.3}
+\end{figure}
+As Figure~\ref{fig:1.3} shows that, power lines is flow outward from line charge.
+
+% work 2
 \section{
   Simulation of Infinitesimal Method
  }
+ \label{sec:inf}
+Using MATLAB to describe electric field and draw pictures
+simulated by infinitesimal methods.\\
+1. Initialization. Set the coordinates of 4m $\times$ 4m.
+The number of coordinates is 60 $\times$ 60,
+just similar to \ref{sec:inte}.
+\lstinputlisting[lastline = 14]{../work1.m}
+\label{work2.1}
+
+
+\begin{lstlisting}
+    for ni = n % darw 3 times picture for different n
+        ...
+        ...
+        ...
+    end
+\end{lstlisting}
+
+2. Calculate the electric potential distributionby using \ref{func}: $V\_con$.
+And draw picture of the distribution of electric field.
+\lstinputlisting[firstline = 17, lastline =23]{../work1.m}
+\label{work1.3}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width = 3.4in]{figures/fig1.1.eps}
+    \caption{Distribution of electric potential simulated by integration method}
+    \label{fig:1.1}
+\end{figure}
+
+As Figure~\ref{fig:1.1} shows that,
+the distribution of electric potential is similar to shape of fins.
+But for simulated by matlab,
+the electric potential on the line charge is infinite in fact.\\
+\\
+\\
+3. Draw picture of Isopotential lines.
+Set range of potential is (0, 60) V.
+\lstinputlisting[firstline = 26, lastline =36]{../work1.m}
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width = 3.4in]{figures/fig1.2.eps}
+    \caption{Isopotential lines simulated by integration method}
+    \label{fig:1.2}
+\end{figure}
+As Figure~\ref{fig:1.2} shows that, the Isopotential lines are ellipse.
+And when coordinate far from line charge, isopotential lines is being more round.
+It is means that the potential distribution of a short line charge
+is close to point charge in some ways.\\
+\\
+4. Draw picture of power lines.
+\lstinputlisting[firstline = 39]{../work1.m}
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width = 3.4in]{figures/fig1.3.eps}
+    \caption{Isopotential lines simulated by integration method}
+    \label{fig:1.3}
+\end{figure}
+As Figure~\ref{fig:1.3} shows that, power lines is flow outward from line charge.
+
 \section*{Acknowledgment}
 \thanks{
-    Thanks to YouWei Jia, the teacher who teach me the knowledge about Electromagnetics
+    Thanks to Youwei Jia, the teacher who teach me the knowledge about Electromagnetics
     and the using methods of MATLAB. He gives amounts of help to me to finish this article.
 }
 
