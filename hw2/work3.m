@@ -1,70 +1,97 @@
-clear;                  % clear memory
-clc;                    % clear screen
-ro = 1e-9;              % set charge density
-k=9e9;                   % set
-n= 20;                 % 拟合精度（将线电荷分成n份）
-pn = 100;               % 横纵坐标精度（将横纵坐标分为pn份）
-%假设线电荷在A，B两点之间
-xa = -1;                % 设置A点横坐标
-ya = 0;                 % 设置A点纵坐标
-xb = 1;                 % 设置B点横坐标
-yb = 0;                 % 设置B点纵坐标
-%
-xm = 4;                   % 设置场域中x方向的范围
-ym = 4;                   % 设置场域中y方向的范围
-x = linspace(-xm,xm,pn);    % 将x轴等分60等份
-y = linspace(-ym,ym,pn);    % 将y轴等分成60等份
-[X,Y] = meshgrid(x,y);      % 形成场域中各点的坐标
+clear; % clear memory
+clc; % clear command window
+l = 2; % set length
+ro = 1e-9; % set charge density
+k=9e9; % set electrostatic constant
+n = [20, 50, 100]; % set three degree of seperation
+pn = 60; % set accuarcy of coordinates
+xa = -1; % set x-coordinate of point A
+xb = 1; % set x-coordinate of point A
 
-V1 = V_dis(ro,xa,xb,n,pn,X,Y);
-V2 = V_con(ro,X,Y);
-dV = V1 - V2;
+xm = 4; % set max value of x
+ym = 4; % set max value of y
+x = linspace(-xm,xm,pn); % devide the x-axis into pn segments
+y = linspace(-ym,ym,pn); % devide the x-axis into pn segments
+[X,Y] = meshgrid(x,y); % to form the coordinates
+V1 = V_con(ro,X,Y); % the real electric potential distribustion of line charge
 
 
-figure(31);
-mesh(X,Y,V1,V1+100);
-hold on;
-mesh(X,Y,V2,V2-100);
-hidden off;
-
-xlabel('x');
-ylabel('y')
-hold off;
-
-figure(34);
-lm = 0;
-for i = 1:pn
-    if x(i) > -1.05 && x(i)< -0.95
-        lm = i;
-    end
+li = 1;
+for ni = n % draw figure three times fo different N (20, 50, 100)
+    V2 = V_dis(ro,xa,xb,ni,pn,X,Y); % the electric potential distribustion of the infinitemal method
+    dV = abs(V1 - V2); % calculate the difference between two method
+    
+    figure(30 + li); % plot at figure 31, 32, 33
+    mesh(X, Y, dV); % plot distribustion of the difference
+    hold on;
+    title({'Distribution of the difference potential';' (by 11910103 Qingfu Qin)'},'fontsize',20);    % title figure
+    xlabel('X axis(Unit：m)','fontsize',15); % label X axis
+    ylabel('Y axis(Unit：m)','fontsize',15); % label Y axis
+    hold off;
+    li = li +1;
 end
 
-plot(y,V1(:,lm),'b');
-hold on;
-plot(y,V2(:,lm),'r');
+N = 20; % set the number of segments
+y = [0.1]; % set y = 0.1;
+[X,Y] = meshgrid(x,y); % to form the coordinates
+V1 = V_con(ro,X,Y); % calculate the real distribustion at y = 0.1
 
-figure(35);
-plot(y,dV(:,lm),'g');
-
-figure(36);
-ln = 0;
-for i = 1:pn
-    if y(i) > -1.05 && y(i) < -0.95
-        ln = i;
-    end
+V2 = zeros(N,1,pn);        % create the coordinates space for N point charges
+dx = 2/N;
+x0 = xa + dx/2; % the first x-coordinate
+xn = xb - dx/2; % the last x-coordinate
+qx = x0: dx :xn;   % the x-coordinate of charge segments
+i = 1;
+for qxi = qx
+    r = sqrt((X-qxi).^2+(Y.^2)); % calculate the distances for coordinates to each charge point
+    V2(i,:,:) = 1 ./ r; % storage reciprocal of the distances
+    i = i + 1;
 end
 
-plot(x,V1(ln,:),'b');
+V2 = sum(V2);  % calculate the sum of reciprocal of the distances 
+V2 = reshape(V2,1,pn); % reshape matrix to two demension
+dq = ro * l / N; %calculate dq
+figure(34); % plot at figure 34
+plot(x, V1, 'r'); % plot V1-a
 hold on;
-plot(x,V2(ln,:),'r');
-
-figure(37);
-plot(x,dV(ln,:),'g');
-
-
-figure(32);
-mesh(X,Y,dV);
-hold on;
-xlabel('x');
-ylabel('y')
+plot(x, V2, 'b'); % plot V2-a
+xlabel('X axis(Unit：m)','fontsize',15); % label X axis
+ylabel('V(Unit：F/m)','fontsize',15); % label Y axis (Y axis is potential level when y = 0.1)
 hold off;
+
+x = [-1:0.05/100:1];
+dVm = k * ro ./ (x.^2+0.1^2);
+figure(35); % plot at figure 34
+plot(x, dVm, 'b');
+hold on;
+qx = xa + 0.05: dx :xb;   % get x-coordinate of left point of each rectangular area.
+dVq = k * ro ./ (qx.^2+0.1^2); % calculate the each area's height.
+plot(qx,dVq, 'ro'); % draw the point of each height at the function
+
+qx = qx - 2/40; % move middle point of each area to fit the value of the function
+
+stem(qx,dVq,'r','Marker','None');
+stairs(qx,dVq, 'r'); % draw the areas.
+hold off;
+
+Sr = dVq * dx; % area of each rectangular block
+
+qx = xa: dx :xb;   % get x-coordinate of left point of each rectangular area.
+
+Fi = k * ro .* log(abs(sqrt(100.*qx.^2+1)+10.*qx));
+p = 2;
+Si = linspace(0,0,20);
+while p < 22
+Si(p-1) = Fi(p) - Fi(p-1);
+    p= p + 1;
+end
+
+ei = abs(Si - Sr);
+e = sum(ei);
+
+
+
+
+
+
+

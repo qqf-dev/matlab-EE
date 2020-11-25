@@ -13,7 +13,7 @@ x = linspace(-xm,xm,pn); % devide the x-axis into pn segments
 y = linspace(-ym,ym,pn); % devide the x-axis into pn segments
 [X,Y] = meshgrid(x,y); % to form the coordinates
 V = V_con(ro,X,Y); % calculate the electric potential distribustion
-%
+
 figure(11); % plot at figure 11
 mesh(X,Y,V); % plot the distribustion of electric potential 
 hold on;
@@ -22,7 +22,7 @@ ylabel('Y axis(Unit: m)','fontsize',15); % label Y axis
 zlabel('V(Unit: F/m)','fontsize',15) % label Z axis
 title({'Distribustion of electric potential of a line charge';'by integration method (by 11910103 Qingfu Qin)'},'fontsize',20) % title figure
 hold off;
-%
+
 Vmin=0; % set minimum potential
 Vmax=60; % set maximum potential
 Veq=linspace(Vmin,Vmax,40); % set 40 potential of isopotential lines
@@ -34,7 +34,7 @@ title({'Isopotential lines of a line charge';'by integration method (by 11910103
 xlabel('X axis(Unit：m)','fontsize',15); % label X axis
 ylabel('Y axis(Unit：m)','fontsize',15); % label Y axis
 hold off;
-%
+
 [Ex,Ey]=gradient(-V); % calculation of electric field intensity at each point
 del_theta=15; % set angular difference
 theta=(0:del_theta:360).*pi/180; % express the angle into radian

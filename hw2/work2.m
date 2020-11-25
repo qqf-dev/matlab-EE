@@ -3,7 +3,7 @@ clc; % clear command window
 l = 2; % set length
 ro = 1e-9; % set charge density
 k=9e9; % set electrostatic constant
-n = [20, 50, 100]; % set three degree of seperation
+n = [20, 20, 20]; % set three degree of seperation
 pn = 60; % set accuarcy of coordinates
 xa = -1; % set x-coordinate of point A
 xb = 1; % set x-coordinate of point A
@@ -17,8 +17,7 @@ y = linspace(-ym,ym,pn); % devide the x-axis into pn segments
 li = 1;
 for ni = n % darw 3 times picture for different n
     V = V_dis(ro,xa,xb,ni,pn,X,Y);
-    ni
-    %   
+     
     figure(20 + li); % plot at figure 21, 22, 23
     mesh(X,Y,V); % plot the distribustion of electric potential 
     hold on;
@@ -27,7 +26,7 @@ for ni = n % darw 3 times picture for different n
     zlabel('V(Unit: F/m)','fontsize',15) % label Z axis
     title({'Distribustion of electric potential of a line charge';'by infinitesimal method (by 11910103 Qingfu Qin)'},'fontsize',20) % title figure
     hold off;
-    %
+    
     Vmin=0; % set minimum potential
     Vmax=60; % set maximum potential
     Veq=linspace(Vmin,Vmax,40); % set 40 potential of isopotential lines
@@ -39,7 +38,7 @@ for ni = n % darw 3 times picture for different n
     xlabel('X axis(Unit：m)','fontsize',15); % label X axis
     ylabel('Y axis(Unit：m)','fontsize',15); % label Y axis
     hold off;
-    %
+    
     [Ex,Ey]=gradient(-V); % calculation of electric field intensity at each point
     del_theta=15; % set angular difference
     theta=(0:del_theta:360).*pi/180; % express the angle into radian
@@ -50,7 +49,7 @@ for ni = n % darw 3 times picture for different n
     grid on;
     hold on;
     contour(X,Y,V,Veq); % plot eauipotential lines
-    title({'Isopotential lines and Power lins of a line charge';'by infinitesimal method (by 11910103 Qingfu Qin)'},'fontsize',20);    % 绘制出图形标题
+    title({'Isopotential lines and Power lins of a line charge';'by infinitesimal method (by 11910103 Qingfu Qin)'},'fontsize',20);    % title figure
     xlabel('X axis(Unit：m)','fontsize',15); % label X axis
     ylabel('Y axis(Unit：m)','fontsize',15); % label Y axis
     hold off;

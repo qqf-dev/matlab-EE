@@ -7,6 +7,7 @@
 \usepackage[cmintegrals]{newtxmath}
 \usepackage{bm}
 \usepackage{graphicx}
+\usepackage{subfigure}
 % Using mcode for input code of MATLAB
 \usepackage{listings}
 \usepackage[framed,numbered,autolinebreaks,useliterate]{mcode}
@@ -36,7 +37,7 @@
     think of them as point charges, when increasing the degree of seperation, the
     electric field distribution is close to integration method.
     To analyze the difference between two methods, the difference caused by
-    degree of seperation and the coordinate precision.
+    degree of seperation.
 \end{abstract}
 
 % Introduction part to describe the background of the experimnet
@@ -81,7 +82,7 @@ They include:
 To analyze the difference, I calculate the difference of electric potential
 between two ways at three different degree of seperation(20, 50 and 100).
 Draw the graph of difference distribution.
-And analyzed the difference at line: $y=0.5$,
+And analyzed the difference at line: $y = 0.1$,
 using knowledge of calculus to describe the difference.
 
 \section{
@@ -202,6 +203,7 @@ If we calculate each point of the coordinate.
     MATLAB Functions
 }
 \label{func}
+Set functions can help to reduced the code.
 Functions included:
 \begin{itemize}
     \item 1) function: V\_con
@@ -230,7 +232,7 @@ by using infinitesimal method, namely, it use equation (8) to calculate.
 \section{
   Simulation of Integration Method
  }
- \label{sec:inte}
+\label{sec:inte}
 Using MATLAB to describe electric field and draw pictures
 simulated by integration methods.\\
 1. Initialization. Set the coordinates of 4m $\times$ 4m.
@@ -239,7 +241,7 @@ The number of coordinates is 60 $\times$ 60.
 \label{work1.1}
 
 2. Calculate the electric potential distributionby using \ref{func}: $V\_con$.
-And draw picture of the distribution of electric field.
+And draw picture of the distribution of electric field to Figure~\ref{fig:1.1};
 \lstinputlisting[firstline = 17, lastline =23]{../work1.m}
 \label{work1.2}
 
@@ -255,8 +257,7 @@ the distribution of electric potential is similar to shape of fins.
 But for simulated by matlab,
 the electric potential on the line charge is infinite in fact.\\
 \\
-\\
-3. Draw picture of Isopotential lines.
+3. Draw picture of Isopotential lines to Figure~\ref{fig:1.2}.
 Set range of potential is (0, 60) V.
 \lstinputlisting[firstline = 26, lastline =36]{../work1.m}
 \label{work1.3}
@@ -267,12 +268,13 @@ Set range of potential is (0, 60) V.
     \label{fig:1.2}
 \end{figure}
 As Figure~\ref{fig:1.2} shows that, the Isopotential lines are ellipse.
-And when coordinate far from line charge, isopotential lines is being more round.
+And where the coordinates is far from line charge, the isopotential lines is being more round.
 It is means that the potential distribution of a short line charge
-is close to point charge in some ways.\\
+is close to point charge in some ways.
+And It also prove that if the line charge is short enough, it similar to point charge\\
 \\
-4. Draw picture of power lines.
-\lstinputlisting[firstline = 39]{../work1.m}
+4. Draw picture of power lines to Figure~\ref{fig:1.3}.
+\lstinputlisting[firstline = 38, lastline = 51]{../work1.m}
 \label{work1.4}
 \begin{figure}[htbp]
     \centering
@@ -286,65 +288,232 @@ As Figure~\ref{fig:1.3} shows that, power lines is flow outward from line charge
 \section{
   Simulation of Infinitesimal Method
  }
- \label{sec:inf}
+\label{sec:inf}
+
 Using MATLAB to describe electric field and draw pictures
 simulated by infinitesimal methods.\\
 1. Initialization. Set the coordinates of 4m $\times$ 4m.
 The number of coordinates is 60 $\times$ 60,
 just similar to \ref{sec:inte}.
-\lstinputlisting[lastline = 14]{../work1.m}
+\lstinputlisting[lastline = 15]{../work2.m}
 \label{work2.1}
 
-
+2. Draw three times pictures for different N (20, 50, 100)
 \begin{lstlisting}
+    li = 1;
     for ni = n % darw 3 times picture for different n
-        ...
-        ...
-        ...
+        ... part 1 ...
+        ... part 2 ...
+        ... part 3 ...
+        li = li + 1;
     end
 \end{lstlisting}
 
-2. Calculate the electric potential distributionby using \ref{func}: $V\_con$.
-And draw picture of the distribution of electric field.
-\lstinputlisting[firstline = 17, lastline =23]{../work1.m}
+part 1. Calculate the electric potential distributionby using \ref{func}: $V\_dis$.
+And draw picture of the distribution of electric to Figure~\ref{fig:2.1}.
+\lstinputlisting[firstline = 19, lastline =28]{../work2.m}
 \label{work1.3}
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width = 3.4in]{figures/fig1.1.eps}
-    \caption{Distribution of electric potential simulated by integration method}
-    \label{fig:1.1}
+    \subfigure[N = 20]{
+        \includegraphics[width = 1.6in]{figures/fig2.1.a.eps}
+        \label{fig:2.1.a}
+    }
+    \subfigure[N = 50]{
+        \includegraphics[width = 1.6in]{figures/fig2.1.b.eps}
+        \label{fig:2.1.b}
+    }
+    \subfigure[N = 100]{
+        \includegraphics[width = 1.6in]{figures/fig2.1.c.eps}
+        \label{fig:2.1.c}
+
+    }
+
+    \caption{Distribution of electric potential simulated by infinitesimal method}
+    \label{fig:2.1}
+\end{figure}
+As three figures show, the distribution of electric potential simulated by infinitesimal method.\\
+\\
+part 2. Draw picture of Isopotential lines to Figure~\ref{fig:2.2}.
+Set range of potential is (0, 60) V.
+\lstinputlisting[firstline = 30, lastline = 40]{../work2.m}
+
+\begin{figure}[htbp]
+    \centering
+    \subfigure[N = 20]{
+        \includegraphics[width = 1.6in]{figures/fig2.2.a.eps}
+        \label{fig:2.2.a}
+    }
+    \subfigure[N = 50]{
+        \includegraphics[width = 1.6in]{figures/fig2.2.b.eps}
+        \label{fig:2.2.b}
+    }
+    \subfigure[N = 100]{
+        \includegraphics[width = 1.6in]{figures/fig2.2.c.eps}
+        \label{fig:2.2.c}
+
+    }
+
+    \caption{Distribution of electric potential simulated by infinitesimal method}
+    \label{fig:2.2}
 \end{figure}
 
-As Figure~\ref{fig:1.1} shows that,
-the distribution of electric potential is similar to shape of fins.
-But for simulated by matlab,
-the electric potential on the line charge is infinite in fact.\\
-\\
-\\
-3. Draw picture of Isopotential lines.
-Set range of potential is (0, 60) V.
-\lstinputlisting[firstline = 26, lastline =36]{../work1.m}
+
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width = 3.4in]{figures/fig1.2.eps}
-    \caption{Isopotential lines simulated by integration method}
-    \label{fig:1.2}
+    \subfigure[N = 20]{
+        \includegraphics[width = 1.6in]{figures/fig2.3.a.eps}
+        \label{fig:2.3.a}
+    }
+    \subfigure[N = 50]{
+        \includegraphics[width = 1.6in]{figures/fig2.3.b.eps}
+        \label{fig:2.3.b}
+    }
+    \subfigure[N = 100]{
+        \includegraphics[width = 1.6in]{figures/fig2.3.c.eps}
+        \label{fig:2.3.c}
+
+    }
+
+    \caption{Distribution of electric potential simulated by infinitesimal method}
+    \label{fig:2.3}
 \end{figure}
-As Figure~\ref{fig:1.2} shows that, the Isopotential lines are ellipse.
-And when coordinate far from line charge, isopotential lines is being more round.
-It is means that the potential distribution of a short line charge
-is close to point charge in some ways.\\
-\\
-4. Draw picture of power lines.
-\lstinputlisting[firstline = 39]{../work1.m}
+
+part 3. Draw picture of power lines to Figure~\ref{fig:2.3}
+\lstinputlisting[firstline = 42,lastline = 55]{../work2.m}
+
+As Figure~\ref{fig:2.2} and Figure~\ref{fig:2.3} show that,
+simulation by using infinitesimal method is very close to integration method
+
+% work 3
+\section{
+  Analyze the Difference between two Methods
+ }
+\label{sec:diff}
+
+1. Initialization. Set coordinates as \ref{sec:inte} and \ref{sec:inf}.
+And the real distribution of electric distribution $V_1$ will not change.
+\lstinputlisting[lastline = 16]{../work3.m}
+
+2. Draw difference of electric potential distribution between two methods to Figure~\ref{fig:3.1}.
+\lstinputlisting[firstline = 19, lastline = 32]{../work3.m}
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width = 3.4in]{figures/fig1.3.eps}
-    \caption{Isopotential lines simulated by integration method}
-    \label{fig:1.3}
+    \subfigure[N = 20]{
+        \includegraphics[width = 3.2in]{figures/fig3.1.a.eps}
+        \label{fig:3.1.a}
+    }
+    \subfigure[N = 50]{
+        \includegraphics[width = 3.2in]{figures/fig3.1.b.eps}
+        \label{fig:3.1.b}
+    }
+    \subfigure[N = 100]{
+        \includegraphics[width = 3.2in]{figures/fig3.1.c.eps}
+        \label{fig:3.1.c}
+    }
+    \caption{Difference between two distributions of electric potential}
+    \label{fig:3.1}
 \end{figure}
-As Figure~\ref{fig:1.3} shows that, power lines is flow outward from line charge.
+According to Figure~\ref{fig:3.1}, the bigger N is, the smaller difference is.
+And the biggest difference is around the endpoints of the line charge.\\
+\\
+For the electric potential on the line charge is infinite,
+the line near the line charge to analyze the difference is a great choice,
+specifically, let $x \in [-4,4]$, $y = 0.1$.
+When $N = 20$, the difference is bigger, so come from the situation of N = 20 for infinitesimal method.\par
+
+\lstinputlisting[firstline = 34, lastline = 60]{../work3.m}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width = 3.4in]{figures/fig3.2.eps}
+    \caption{Simulation at y = 0.1}
+    \label{fig:3.2}
+\end{figure}
+
+If we calculate the equation of the distance to the line charge at point P $(0, 0.1)$,
+According to equation (5) we can get dV/dx of P is:
+\begin{equation}
+    f(x) = \frac{dV}{dx} = \frac{k \rho}{\sqrt{x^2+0.1^2}}
+\end{equation}
+
+\begin{equation}
+    \begin{aligned}
+        V(x) = & \ \int{\frac{k \rho}{\sqrt{x^2+0.1^2}}}       \\
+        =      & \ \ln(\left| sqrt(100x^2+1) +10x \right|) + C
+    \end{aligned}
+\end{equation}
+
+Draw the figure of dV/dx and the rectangular areas formed
+depart x axis to N segments, using the middle point's value as height,
+make rectangular area (width id dx ,the length of segments),
+to replace the area of function and x-axis in the same width.
+
+\lstinputlisting[firstline = 62, lastline = 75]{../work3.m}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width = 3.4in]{figures/fig3.3.eps}
+    \caption{Potential density distribution at point(0, 0.1)}
+    \label{fig:3.3}
+\end{figure}
+
+
+According to Figure~\ref{fig:3.3} bule function is the real value of
+Can be proved, when $dx = l / N$ approximate to 0, N approximate infinity,
+the integration between real value and infinitesimal will be small.\\
+
+The error ($\epsilon$) from real value to approximative value is:
+\begin{equation}
+    \epsilon_i =\left| k\int_{t}^{t+\Delta x} \frac{\rho dx}{R} -  \frac{k \rho \Delta x}{\sqrt{(t - \frac{\Delta x}{2})^2 + 0.01}} \right |
+\end{equation}
+\begin{equation}
+    \epsilon = \sum_{i=1}^{N}{\epsilon_i}                                      \\
+\end{equation}
+Find the error at point p for each segment.
+\lstinputlisting[firstline = 77]{../work3.m}
+\begin{table}[htbp]
+    \renewcommand{\arraystretch}{1.3}
+    \caption{Error from infinitesimal method}
+    \label{tab:error1}
+    \centering\
+
+    \begin{tabular}{|c|c|c|c|c|c|}
+        \hline
+        i             & 1     & 2     & 3     & 4     & 5      \\
+        \hline
+        $\epsilon_i $ & 0.043 & 0.176 & 0.381 & 0.710 & 1.27   \\
+        \hline
+        i             & 6     & 7     & 8     & 9     & 10     \\
+        \hline
+        $\epsilon_i $ & 2.28  & 4.31  & 9.04  & 22.6  & 64.1   \\
+        \hline
+        i             & 11    & 12    & 13    & 14    & 15     \\
+        \hline
+        $\epsilon_i $ & 64.1  & 22.6  & 9.04  & 4.31  & 2.28   \\
+        \hline
+        i             & 16    & 17    & 18    & 19    & 20     \\
+        \hline
+        $\epsilon_i $ & 1.27  & 0.710 & 0.381 & 0.176 & 0.0433 \\
+        \hline
+    \end{tabular}
+\end{table}
+
+$\epsilon \approx 210$;
+
+From Table~\ref{tab:error1}, each rectangular area has difference of the trapezoid with curve side,
+so if the curve is bended more seriously, then the error will be increase.
+That is affected by the degree of seperation, because for a smaller distance, the bend level is lower.
+
+
+\section{
+  Conclusion
+ }
+The distribution of electric potential of line charge is similar to shape of fins.
+The potential distribution of a short line chargeis close to point charge in some ways.
+The difference between two methods, the difference caused by  effeacted by degree of seperation.
+\label{conclusion}
 
 \section*{Acknowledgment}
 \thanks{

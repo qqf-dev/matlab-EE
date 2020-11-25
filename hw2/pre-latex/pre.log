@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/Debian) (preloaded format=xelatex 2020.11.18)  25 NOV 2020 07:50
+This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/Debian) (preloaded format=xelatex 2020.11.18)  25 NOV 2020 14:44
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -284,23 +284,42 @@ File: xetex.def 2017/06/24 v5.0h Graphics/color driver for xetex
 ))
 \Gin@req@height=\dimen167
 \Gin@req@width=\dimen168
+) (/usr/share/texlive/texmf-dist/tex/latex/subfigure/subfigure.sty
+Package: subfigure 2002/03/15 v2.1.5 subfigure package
+\subfigtopskip=\skip53
+\subfigcapskip=\skip54
+\subfigcaptopadj=\dimen169
+\subfigbottomskip=\skip55
+\subfigcapmargin=\dimen170
+\subfiglabelskip=\skip56
+\c@subfigure=\count267
+\c@lofdepth=\count268
+\c@subtable=\count269
+\c@lotdepth=\count270
+
+****************************************
+* Local config file subfigure.cfg used *
+****************************************
+(/usr/share/texlive/texmf-dist/tex/latex/subfigure/subfigure.cfg)
+\subfig@top=\skip57
+\subfig@bottom=\skip58
 ) (/usr/share/texlive/texmf-dist/tex/latex/listings/listings.sty
-\lst@mode=\count267
+\lst@mode=\count271
 \lst@gtempboxa=\box49
 \lst@token=\toks25
-\lst@length=\count268
-\lst@currlwidth=\dimen169
-\lst@column=\count269
-\lst@pos=\count270
-\lst@lostspace=\dimen170
-\lst@width=\dimen171
-\lst@newlines=\count271
-\lst@lineno=\count272
-\lst@maxwidth=\dimen172
+\lst@length=\count272
+\lst@currlwidth=\dimen171
+\lst@column=\count273
+\lst@pos=\count274
+\lst@lostspace=\dimen172
+\lst@width=\dimen173
+\lst@newlines=\count275
+\lst@lineno=\count276
+\lst@maxwidth=\dimen174
  (/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2019/09/10 1.8c (Carsten Heinz)
-\c@lstnumber=\count273
-\lst@skipnumbers=\count274
+\c@lstnumber=\count277
+\lst@skipnumbers=\count278
 \lst@framebox=\box50
 ) (/usr/share/texlive/texmf-dist/tex/latex/listings/listings.cfg
 File: listings.cfg 2019/09/10 1.8c listings configuration
@@ -335,82 +354,73 @@ LaTeX Font Info:    Trying to load font information for T1+pcr on input line 230
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 )) (/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-xdvipdfmx.def
 File: l3backend-xdvipdfmx.def 2020-02-03 L3 backend support: xdvipdfmx
-\g__graphics_track_int=\count275
+\g__graphics_track_int=\count279
 \l__pdf_internal_box=\box52
-\g__pdf_backend_object_int=\count276
-\g__pdf_backend_annotation_int=\count277
+\g__pdf_backend_object_int=\count280
+\g__pdf_backend_annotation_int=\count281
 ) (./pre.aux
 
 LaTeX Warning: Label `work1.3' multiply defined.
 
-
-LaTeX Warning: Label `fig:1.1' multiply defined.
-
-
-LaTeX Warning: Label `fig:1.2' multiply defined.
-
-
-LaTeX Warning: Label `fig:1.3' multiply defined.
-
 )
 \openout1 = `pre.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/ntxmi/m/it on input line 17.
-LaTeX Font Info:    Trying to load font information for OML+ntxmi on input line 17.
+LaTeX Font Info:    Checking defaults for OML/ntxmi/m/it on input line 18.
+LaTeX Font Info:    Trying to load font information for OML+ntxmi on input line 18.
  (/usr/share/texlive/texmf-dist/tex/latex/newtx/omlntxmi.fd
 File: omlntxmi.fd 2015/08/25 Fontinst v1.933 font definitions for OML/ntxmi.
 )
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 17.
-LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 17.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 18.
+LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 18.
  (/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for U/ntxexa/m/n on input line 17.
-LaTeX Font Info:    Trying to load font information for U+ntxexa on input line 17.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for U/ntxexa/m/n on input line 18.
+LaTeX Font Info:    Trying to load font information for U+ntxexa on input line 18.
  (/usr/share/texlive/texmf-dist/tex/latex/newtx/untxexa.fd
 File: untxexa.fd 2012/04/16 Fontinst v1.933 font definitions for U/ntxexa.
 )
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for LMS/ntxsy/m/n on input line 17.
-LaTeX Font Info:    Trying to load font information for LMS+ntxsy on input line 17.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for LMS/ntxsy/m/n on input line 18.
+LaTeX Font Info:    Trying to load font information for LMS+ntxsy on input line 18.
  (/usr/share/texlive/texmf-dist/tex/latex/newtx/lmsntxsy.fd
 File: lmsntxsy.fd 2016/07/02 Fontinst v1.933 font definitions for LMS/ntxsy.
 )
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for LMX/ntxexx/m/n on input line 17.
-LaTeX Font Info:    Trying to load font information for LMX+ntxexx on input line 17.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for LMX/ntxexx/m/n on input line 18.
+LaTeX Font Info:    Trying to load font information for LMX+ntxexx on input line 18.
  (/usr/share/texlive/texmf-dist/tex/latex/newtx/lmxntxexx.fd
 File: lmxntxexx.fd 2016/07/03 Fontinst v1.933 font definitions for LMX/ntxexx.
 )
-LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    ... okay on input line 18.
 
 -- Lines per column: 58 (exact).
-\c@lstlisting=\count278
-LaTeX Font Info:    Trying to load font information for OT1+ntxtlf on input line 51.
+\c@lstlisting=\count282
+LaTeX Font Info:    Trying to load font information for OT1+ntxtlf on input line 52.
 (/usr/share/texlive/texmf-dist/tex/latex/newtx/ot1ntxtlf.fd
 File: ot1ntxtlf.fd 2015/01/17 v1.0 font definition file for OT1/ntx/tlf
 )
-LaTeX Font Info:    Trying to load font information for U+ntxmia on input line 51.
+LaTeX Font Info:    Trying to load font information for U+ntxmia on input line 52.
  (/usr/share/texlive/texmf-dist/tex/latex/newtx/untxmia.fd
 File: untxmia.fd 2018/04/14 Fontinst v1.933 font definitions for U/ntxmia.
 )
-LaTeX Font Info:    Trying to load font information for U+ntxsym on input line 51.
+LaTeX Font Info:    Trying to load font information for U+ntxsym on input line 52.
  (/usr/share/texlive/texmf-dist/tex/latex/newtx/untxsym.fd
 File: untxsym.fd 2015/03/20 Fontinst v1.933 font definitions for U/ntxsym.
 )
-LaTeX Font Info:    Trying to load font information for U+ntxsyc on input line 51.
+LaTeX Font Info:    Trying to load font information for U+ntxsyc on input line 52.
  (/usr/share/texlive/texmf-dist/tex/latex/newtx/untxsyc.fd
 File: untxsyc.fd 2012/04/12 Fontinst v1.933 font definitions for U/ntxsyc.
 )
@@ -427,13 +437,13 @@ File: ts1pcr.fd 2001/06/04 font definitions for TS1/pcr.
 File: figures/fig1.1.eps Graphic file (type eps)
 <figures/fig1.1.eps>
 
-Underfull \hbox (badness 10000) in paragraph at lines 253--261
+Underfull \hbox (badness 10000) in paragraph at lines 255--262
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 253--261
-
+Underfull \hbox (badness 1675) in paragraph at lines 255--262
+\T1/ptm/m/n/10 3. Draw pic-ture of Isopo-ten-tial lines to Fig-ure 2[]. Set
  []
 
 (../work1.m
@@ -443,7 +453,7 @@ Missing character: There is no ： in font pcrr8t!
 File: figures/fig1.2.eps Graphic file (type eps)
 <figures/fig1.2.eps>
 
-Underfull \hbox (badness 10000) in paragraph at lines 269--275
+Underfull \hbox (badness 10000) in paragraph at lines 270--277
 
  []
 
@@ -458,65 +468,117 @@ Missing character: There is no 形 in font pcrr8t!
 Missing character: There is no 标 in font pcrr8t!
 Missing character: There is no 题 in font pcrr8t!
 Missing character: There is no ： in font pcrr8t!
+ [3]
 Missing character: There is no ： in font pcrr8t!
 )
 File: figures/fig1.3.eps Graphic file (type eps)
 <figures/fig1.3.eps>
- [3] (../work1.m) (../work1.m)
-File: figures/fig1.1.eps Graphic file (type eps)
-<figures/fig1.1.eps>
+ (../work2.m) (../work2.m)
+File: figures/fig2.1.a.eps Graphic file (type eps)
+<figures/fig2.1.a.eps>
+File: figures/fig2.1.b.eps Graphic file (type eps)
+<figures/fig2.1.b.eps>
+File: figures/fig2.1.c.eps Graphic file (type eps)
+<figures/fig2.1.c.eps>
 
-Underfull \hbox (badness 10000) in paragraph at lines 319--327
+Underfull \hbox (badness 10000) in paragraph at lines 336--340
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 319--327
-
- []
-
-(../work1.m
+(../work2.m
+Missing character: There is no ： in font pcrr8t!
+Missing character: There is no ： in font pcrr8t!
+ [4])
+File: figures/fig2.2.a.eps Graphic file (type eps)
+<figures/fig2.2.a.eps>
+File: figures/fig2.2.b.eps Graphic file (type eps)
+<figures/fig2.2.b.eps>
+File: figures/fig2.2.c.eps Graphic file (type eps)
+<figures/fig2.2.c.eps>
+File: figures/fig2.3.a.eps Graphic file (type eps)
+<figures/fig2.3.a.eps>
+File: figures/fig2.3.b.eps Graphic file (type eps)
+<figures/fig2.3.b.eps>
+File: figures/fig2.3.c.eps Graphic file (type eps)
+<figures/fig2.3.c.eps>
+ (../work2.m
+Missing character: There is no ： in font pcrr8t!
+Missing character: There is no ： in font pcrr8t!
+Missing character: There is no ： in font pcrr8t!
+Missing character: There is no ： in font pcrr8t!
+) (../work3.m) (../work3.m
 Missing character: There is no ： in font pcrr8t!
 Missing character: There is no ： in font pcrr8t!
 )
-File: figures/fig1.2.eps Graphic file (type eps)
-<figures/fig1.2.eps>
-
-Underfull \hbox (badness 10000) in paragraph at lines 334--340
+File: figures/fig3.1.a.eps Graphic file (type eps)
+<figures/fig3.1.a.eps>
+File: figures/fig3.1.b.eps Graphic file (type eps)
+<figures/fig3.1.b.eps>
+File: figures/fig3.1.c.eps Graphic file (type eps)
+<figures/fig3.1.c.eps>
+ [5]
+Underfull \hbox (badness 10000) in paragraph at lines 418--424
 
  []
 
-(../work1.m
+
+Underfull \vbox (badness 1122) has occurred while \output is active []
+
+ (../work3.m
 Missing character: There is no ： in font pcrr8t!
 Missing character: There is no ： in font pcrr8t!
- [4]
-Missing character: There is no 绘 in font pcrr8t!
-Missing character: There is no 制 in font pcrr8t!
-Missing character: There is no 出 in font pcrr8t!
-Missing character: There is no 图 in font pcrr8t!
-Missing character: There is no 形 in font pcrr8t!
-Missing character: There is no 标 in font pcrr8t!
-Missing character: There is no 题 in font pcrr8t!
 Missing character: There is no ： in font pcrr8t!
 Missing character: There is no ： in font pcrr8t!
 )
-File: figures/fig1.3.eps Graphic file (type eps)
-<figures/fig1.3.eps>
- [5] (./pre.aux)
+File: figures/fig3.2.eps Graphic file (type eps)
+<figures/fig3.2.eps>
+
+Underfull \vbox (badness 2111) has occurred while \output is active []
+
+ [6] (../work3.m
+Missing character: There is no ： in font pcrr8t!
+Missing character: There is no ： in font pcrr8t!
+Missing character: There is no ： in font pcrr8t!
+Missing character: There is no ： in font pcrr8t!
+)
+File: figures/fig3.3.eps Graphic file (type eps)
+<figures/fig3.3.eps>
+
+
+LaTeX Warning: Reference `fig:3.3' on page 7 undefined on input line 463.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 463--466
+
+ []
+
+(../work3.m
+Missing character: There is no ： in font pcrr8t!
+Missing character: There is no ： in font pcrr8t!
+Missing character: There is no ： in font pcrr8t!
+Missing character: There is no ： in font pcrr8t!
+)
+
+LaTeX Warning: Reference `tab:error1' on page 7 undefined on input line 505.
+
+[7] (./pre.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
+
+LaTeX Warning: There were undefined references.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 7014 strings out of 479819
- 93768 string characters out of 5895845
- 465756 words of memory out of 5000000
- 24015 multiletter control sequences out of 15000+600000
- 630082 words of font info for 118 fonts, out of 8000000 for 9000
+ 7322 strings out of 479819
+ 98271 string characters out of 5895845
+ 472244 words of memory out of 5000000
+ 24291 multiletter control sequences out of 15000+600000
+ 646386 words of font info for 143 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 43i,10n,76p,780b,1648s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 43i,10n,76p,780b,1650s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on pre.pdf (5 pages).
+Output written on pre.pdf (7 pages).

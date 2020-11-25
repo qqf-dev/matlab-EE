@@ -12,7 +12,7 @@ dx = l / N; % length of each segments
 
 x0 = xa + dx/2; % the first x-coordinate
 xn = xb - dx/2; % the last x-coordinate
-qx = xa: dx :xb;   % the x-coordinate of charge segments
+qx = x0: dx :xn;   % the x-coordinate of charge segments
 
 V = zeros(N,n,n);        % create the coordinates space for N point charges
 
