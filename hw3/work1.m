@@ -5,33 +5,86 @@ I = 500; % set the current of the loop
 C = I / (4 * pi);
 
 zc1 = -1;
-zc2 = -1; % set location of the center of each loop(x and y are 0)
+zc2 = 1; % set location of the center of each loop(x and y are 0)
 
-N = 50; % set the segments number
-ym = 3;
-zm = 3;
-pn = 60; % set the of coordinate
+N = 100; % set the segments number
+ym = 5;
+zm = 5;
+pn = 100; % set the of coordinate
 
 dphi = 2 * pi / N; % set angle of each segment of the loop
-phi = linspace(dphi, 2 * pi - dtheta, N); % set angle - coordinates of segments
+phi = linspace(dphi, 2 * pi - dphi, N); % set angle - coordinates of segments
 
 y = linspace(-ym, ym, pn);
 z = linspace(-zm, zm, pn);
 [Y, Z] = meshgrid(y, z);
 
-xc = a * cos(theta);
-yc = a * sin(theta); % transform angle to xy coordiantes
+xc = a * cos(phi);
+yc = a * sin(phi); % transform angle to xy coordiantes
 
-dl = r * dphi; % set length of each segment
+dl = a * dphi; % set length of each segment
 
+Hx = zeros(pn);
+Hy = zeros(pn);
+Hz = zeros(pn);
 H = zeros(pn);
 
-for li = 1:N
-    % FIXME
-    v_phi = [sin(phi(li)), cos(phi(li))];
-    v_r = [0, Y, Z];
-    R = cross(v_r, v_phi);
+ci = 1;
 
-    R = sqrt(xc(li)^2 + (Y - yc(li)).^2 + (Z - zc1).^2);
-    H = H +
+for bi = y
+
+    cj = 1;
+
+    for bj = z
+
+        dHx = 0;
+        dHy = 0;
+        dHz = 0;
+        dH = 0;
+
+        for li = 1:N
+            R = sqrt((0 - xc(li))^2 + (bi - yc(li))^2 + (bj - zc1)^2);
+
+            v_l = dl * [-sin(phi(li)), cos(phi(li)), 0]; % set the vector of dL
+            v_r = [0 - xc(li), bi - yc(li), bj - zc1]; % set vector of R
+            v_H = cross(v_l, v_r); % calculate value of crross product
+            dHx = dHx + C * v_H(1) / (R^3);
+            dHy = dHy + C * v_H(2) / (R^3);
+            dHz = dHz + C * v_H(3) / (R^3);
+            dH = dH + C * norm(v_H) / (R^3);
+
+        end
+
+        for li = 1:N
+            R = sqrt((0 - xc(li))^2 + (bi - yc(li))^2 + (bj - zc2)^2);
+
+            v_l = dl * [-sin(phi(li)), cos(phi(li)), 0]; % set the vector of dL
+            v_r = [0 - xc(li), bi - yc(li), bj - zc2]; % set vector of R
+            v_H = cross(v_l, v_r); % calculate value of crross product
+            dHx = dHx + C * v_H(1) / (R^3);
+            dHy = dHy + C * v_H(2) / (R^3);
+            dHz = dHz + C * v_H(3) / (R^3);
+            dH = dH + C * norm(v_H) / (R^3);
+
+        end
+
+        Hx(cj, ci) = dHx;
+        Hy(cj, ci) = dHy;
+        Hz(cj, ci) = dHz;
+        H(cj, ci) = dH;
+
+        cj = cj + 1;
+    end
+
+    ci = ci + 1;
 end
+
+figure(1);
+mesh(Y, Z, H);
+hold on;
+xlabel("Y");
+ylabel("Z")
+hold off;
+
+figure(2);
+quiver(Y, Z, Hy ./ H / 2, Hz ./ H / 2);
