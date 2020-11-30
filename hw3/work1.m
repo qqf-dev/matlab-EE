@@ -88,3 +88,12 @@ hold off;
 
 figure(2);
 quiver(Y, Z, Hy ./ H / 2, Hz ./ H / 2);
+
+figure(3);
+theta = [0 50 60 70 80 90 100 110 120 130 180].*pi/180;
+ys = 2.1 * cos(theta);
+
+zs = 1.1 * sin(theta);
+streamline(Y, Z, Hy, Hz, ys, zs);
+hold on;
+streamline(Y, Z, -Hy, -Hz, ys, zs);
