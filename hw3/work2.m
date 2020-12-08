@@ -7,7 +7,7 @@ C = I / (4 * pi);
 zc1 = -1;
 zc2 = 1; % set location of the center of each loop(x and y are 0)
 
-N = 100; % set the segments number
+N = 50; % set the segments number
 ym = 5;
 zm = 5;
 pn = 60; % set the of coordinate
@@ -27,15 +27,15 @@ dl = a * dphi; % set length of each segment
 Hx = zeros(pn);
 Hy = zeros(pn);
 Hz = zeros(pn);
-H = zeros(pn); % construct matrixes of magnetic field
+H = zeros(pn);
 
-ci = 1; % ci is the z coordinate of matrixes
+ci = 1;
 
-for bi = y% each point of bi as y coordinate
+for bi = y
 
-    cj = 1; % cj is the y coordinate of matrixes
+    cj = 1;
 
-    for bj = z% each point of bj as z coordinate
+    for bj = z
 
         dHx = 0;
         dHy = 0;
@@ -56,13 +56,12 @@ for bi = y% each point of bi as y coordinate
         for li = 1:N% calculate magnetic field intensity vector at (bi, bj) of loop2
             R = sqrt((0 - xc(li))^2 + (bi - yc(li))^2 + (bj - zc2)^2);
 
-            v_l = dl * [-sin(phi(li)), cos(phi(li)), 0];
+            v_l = -dl * [-sin(phi(li)), cos(phi(li)), 0]; % the direction of elementary is opposite
             v_r = [0 - xc(li), bi - yc(li), bj - zc2];
             v_H = cross(v_l, v_r);
             dHx = dHx + C * v_H(1) / (R^3);
             dHy = dHy + C * v_H(2) / (R^3);
             dHz = dHz + C * v_H(3) / (R^3);
-            dH = dH + sqrt(dHy.^2 + dHz.^2);
         end
 
         Hx(cj, ci) = dHx;
@@ -91,22 +90,28 @@ quiver(Y, Z, Hy, Hz); % plot the vector graph of magnetic field intensity
 hold on
 plot(-2, -1, 'bo');
 plot(2, -1, 'ro');
-plot(-2, 1, 'bo');
-plot(2, 1, 'ro'); % plot the point of coils
+plot(-2, 1, 'ro');
+plot(2, 1, 'bo');
 xlabel("Y (units: m)");
 ylabel("Z (units: m)"); % label the axis
-axis([-2, 2, -1, 1]);
+axis([-4, 4, -3, 3]);
 hold off;
 
 figure(3);
-theta = [0 50 60 70 80 90 100 110 120 130 180] .* pi / 180; % Set the radian value of the streamlines
-ys = 2.1 * cos(theta);
-zs = 1.1 * sin(theta);
-streamline(Y, Z, Hy, Hz, ys, zs); % plot the vector graph of magnetic field intensity
-axis([-4, 4, -3, 3]);
 
+theta = [0 45 60 75 90 105 120 135 180] .* pi / 180; % Set the radian value of the streamlines
+ysu = (sqrt(5) + 0.1) * cos(theta);
+zsu = (sqrt(5) + 0.1) * sin(theta);
+ysd = (sqrt(5) + 0.1) * cos(-theta);
+zsd = (sqrt(5) + 0.1) * sin(-theta);
+streamline(Y, Z, Hy, Hz, ysu, zsu); % plot the vector graph of magnetic field intensity
 hold on;
-streamline(Y, Z, -Hy, -Hz, ys, zs);
+streamline(Y, Z, -Hy, -Hz, ysu, zsu);
+streamline(Y, Z, Hy, Hz, ysd, zsd);
+streamline(Y, Z, -Hy, -Hz, ysd, zsd);
+
 xlabel("Y (units: m)");
 ylabel("Z (units: m)"); % label the axis
+axis([-4, 4, -3, 3]);
+
 hold off;

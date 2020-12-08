@@ -1,4 +1,4 @@
-clear all;
+clear;
 clc;
 a = 2; % set radius of the current loops
 I = 500; % set the current of the loop
