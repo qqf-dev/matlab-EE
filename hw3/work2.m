@@ -77,15 +77,6 @@ end
 H = sqrt(Hy.^2 + Hz.^2); % calculate the magnitude on yz plane
 
 figure(1);
-mesh(Y, Z, H); % plot graph of magnetic field intensity
-hold on;
-xlabel("Y (units: m)");
-ylabel("Z (units: m)");
-zlabel("H (units: A/m)")% label the axis
-axis([-4, 4, -3, 3]);
-hold off;
-
-figure(2);
 quiver(Y, Z, Hy, Hz); % plot the vector graph of magnetic field intensity
 hold on
 plot(-2, -1, 'bo');
@@ -94,21 +85,27 @@ plot(-2, 1, 'ro');
 plot(2, 1, 'bo');
 xlabel("Y (units: m)");
 ylabel("Z (units: m)"); % label the axis
+axis([-3, 3, -2, 2]);
+hold off;
+
+figure(2);
+mesh(Y, Z, H); % plot graph of magnetic field intensity
+hold on;
+xlabel("Y (units: m)");
+ylabel("Z (units: m)");
+zlabel("H (units: A/m)")% label the axis
 axis([-4, 4, -3, 3]);
 hold off;
 
 figure(3);
-
-theta = [0 45 60 75 90 105 120 135 180] .* pi / 180; % Set the radian value of the streamlines
-ysu = (sqrt(5) + 0.1) * cos(theta);
-zsu = (sqrt(5) + 0.1) * sin(theta);
-ysd = (sqrt(5) + 0.1) * cos(-theta);
-zsd = (sqrt(5) + 0.1) * sin(-theta);
-streamline(Y, Z, Hy, Hz, ysu, zsu); % plot the vector graph of magnetic field intensity
+ys = linspace(-1.5, 1.5, 10);
+zs = linspace(-0.5, 0.5, 10);
+streamline(Y, Z, Hy, Hz, ys, zs); % plot the vector graph of magnetic field intensity
 hold on;
-streamline(Y, Z, -Hy, -Hz, ysu, zsu);
-streamline(Y, Z, Hy, Hz, ysd, zsd);
-streamline(Y, Z, -Hy, -Hz, ysd, zsd);
+streamline(Y, Z, -Hy, -Hz, ys, zs);
+streamline(Y, Z, Hy, Hz, -ys, zs);
+streamline(Y, Z, -Hy, -Hz, -ys, zs);
+
 
 xlabel("Y (units: m)");
 ylabel("Z (units: m)"); % label the axis
