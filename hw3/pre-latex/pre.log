@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/Debian) (preloaded format=xelatex 2020.11.18)  9 DEC 2020 19:17
+This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/Debian) (preloaded format=xelatex 2020.11.18)  9 DEC 2020 22:58
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -404,54 +404,95 @@ LaTeX Font Info:    ... okay on input line 18.
 
 -- Lines per column: 58 (exact).
 \c@lstlisting=\count282
-LaTeX Font Info:    Trying to load font information for OT1+ntxtlf on input line 51.
+LaTeX Font Info:    Trying to load font information for OT1+ntxtlf on input line 52.
 (/usr/share/texlive/texmf-dist/tex/latex/newtx/ot1ntxtlf.fd
 File: ot1ntxtlf.fd 2015/01/17 v1.0 font definition file for OT1/ntx/tlf
 )
-LaTeX Font Info:    Trying to load font information for U+ntxmia on input line 51.
+LaTeX Font Info:    Trying to load font information for U+ntxmia on input line 52.
  (/usr/share/texlive/texmf-dist/tex/latex/newtx/untxmia.fd
 File: untxmia.fd 2018/04/14 Fontinst v1.933 font definitions for U/ntxmia.
 )
-LaTeX Font Info:    Trying to load font information for U+ntxsym on input line 51.
+LaTeX Font Info:    Trying to load font information for U+ntxsym on input line 52.
  (/usr/share/texlive/texmf-dist/tex/latex/newtx/untxsym.fd
 File: untxsym.fd 2015/03/20 Fontinst v1.933 font definitions for U/ntxsym.
 )
-LaTeX Font Info:    Trying to load font information for U+ntxsyc on input line 51.
+LaTeX Font Info:    Trying to load font information for U+ntxsyc on input line 52.
  (/usr/share/texlive/texmf-dist/tex/latex/newtx/untxsyc.fd
 File: untxsyc.fd 2012/04/12 Fontinst v1.933 font definitions for U/ntxsyc.
-) (../work1.m) [1
+) (../work1.m [1
 
 
-] (../work1.m) (../work1.m) (../work1.m
+]) (../work1.m) (../work1.m) (../work1.m
 LaTeX Font Info:    Trying to load font information for TS1+pcr on input line 68.
  (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1pcr.fd
 File: ts1pcr.fd 2001/06/04 font definitions for TS1/pcr.
 ))
 File: figures/work1.1.eps Graphic file (type eps)
 <figures/work1.1.eps>
+
+Underfull \hbox (badness 10000) in paragraph at lines 152--154
+
+ []
+
+(../work1.m)
 File: figures/work1.2.eps Graphic file (type eps)
 <figures/work1.2.eps>
+ [2]
+Underfull \hbox (badness 10000) in paragraph at lines 164--165
+
+ []
+
+(../work1.m)
 File: figures/work1.3.eps Graphic file (type eps)
 <figures/work1.3.eps>
- (../work2.m [2] [3])
+ (../work2.m) (../work2.m) (../work2.m [3]) (../work2.m)
 File: figures/work2.1.eps Graphic file (type eps)
 <figures/work2.1.eps>
+
+Underfull \hbox (badness 2050) in paragraph at lines 205--207
+\T1/ptm/m/n/10 dis-tri-bu-tion be-tween two loops are small, be-cause two
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 205--207
+
+ []
+
+(../work2.m)
 File: figures/work2.2.eps Graphic file (type eps)
 <figures/work2.2.eps>
+
+Underfull \hbox (badness 1708) in paragraph at lines 218--219
+[]\T1/ptm/m/n/10 As Fig-ure 5[] shows that the mag-netic field in-ten-sity
+ []
+
+
+Underfull \hbox (badness 1496) in paragraph at lines 218--219
+\T1/ptm/m/n/10 dis-tri-bu-tion con-cen-trate near the coils just like case 1.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 218--219
+
+ []
+
+(../work2.m)
 File: figures/work2.3.eps Graphic file (type eps)
 <figures/work2.3.eps>
- [4] (./pre.aux)
+ [4] [5
+
+] (./pre.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 7168 strings out of 479819
- 96120 string characters out of 5895845
- 584781 words of memory out of 5000000
- 24171 multiletter control sequences out of 15000+600000
+ 7187 strings out of 479819
+ 96315 string characters out of 5895845
+ 592669 words of memory out of 5000000
+ 24176 multiletter control sequences out of 15000+600000
  626794 words of font info for 116 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 43i,7n,76p,780b,1556s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 43i,7n,76p,780b,1692s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on pre.pdf (4 pages).
+Output written on pre.pdf (5 pages).

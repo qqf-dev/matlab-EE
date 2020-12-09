@@ -34,7 +34,8 @@
     divide two current loop into 50 segments, and calculate the magnetic feild intensity vector at each point of
     yz plane which is perpendicular to the current loops. We can find that if two current directions of loops are same,
     the magnetic field distribution between two loops is uniform; and if the directions are different, 
-    the magnetic fields for each loop are cancelled out in the space between loops, so 
+    the magnetic fields for each loop are cancelled out in the space between loops, so the magnetic field intensity at
+    the center between two loops is small. and the magnetic lines are all closed.
 
     
 \end{abstract}
@@ -83,6 +84,7 @@ of a short current segment ($d \mathbf{H}$) can be expressed as:
     d\mathbf{H} = \frac{I d\mathbf{L} \times \mathbf{a}_{R} }{4 \pi R^2}
     = \frac{I d\mathbf{L} \times \mathbf{R}}{4 \pi R^3}
 \end{equation}
+\label{eq:Biot-Savart}
 
 Where the coefficient $I d \mathbf{L}$ is elementary current vector,
 $\mathbf{R}$ is the vector that point from the elementary current $I d \mathbf{L}$
@@ -99,6 +101,7 @@ the distribution of the magnetic field intensity along the center axis of the cu
 \begin{equation}
     \mathbf{H} = \frac{I(\pi a^2)\mathbf{a}_z}{2\pi (a^2+z_0^2)^{3/2}}
 \end{equation}
+\label{eq:loop center}
 
 Where \emph{a} is the radius of the current loop, \emph{I} is the current in the current loop, $z_0$ is the coordinate
 of the field point (located on the center axis, i.e. z axis). However, for the field points that are not on the center
@@ -131,71 +134,118 @@ By using MATLAB to simulate case 1, code and graphs are follow:\par
 Firstly, initialize and set $a$, $I$ and coordinates, etc.
 \lstinputlisting[lastline = 14]{../work1.m}
 Then depart current loop to N segments, N = 50;
+And calculate the coordinates of each segment center.
 \lstinputlisting[firstline = 15,lastline = 21]{../work1.m}
 
-Calculate the magnetic field intensity of each point.
+Calculate the magnetic field intensity of each point by using equation in \ref{eq:Biot-Savart}.
 \lstinputlisting[firstline = 23,lastline = 63]{../work1.m}
 
-
-
-Draw the magnetic field intensity magnitude distribution.
+Draw the magnetic field intensity vector distribution at the region between two loops.
 \lstinputlisting[firstline = 65,lastline = 75]{../work1.m}
 
 \begin{figure}[htbp]
     \centering
     \includegraphics[width = 3.4in]{figures/work1.1.eps}
-    \caption{Magnetic field intensity magnitude distribution}
+    \caption{Magnetic field intensity vector distribution in case 1}
     \label{fig:1.1}
 \end{figure}
-
-As Figure~\ref{fig:1.1} shows
+As Figure~\ref{fig:1.1} shows the intensity vector field distribution is uniform. and accoring to right hand rule 
+(blue point is the point of the current flow out the screen and the red is flow in),
+the vectors between two loops are along the direction of $\mathbf{a}_z$.\\\par
+Draw the magnetic field intensity magnitude distribution in the space.
+\lstinputlisting[firstline = 77, lastline = 84]{../work1.m}
 
 \begin{figure}[htbp]
     \centering
     \includegraphics[width = 3.4in]{figures/work1.2.eps}
-    \caption{Magnetic field intensity magnitude distribution}
+    \caption{Magnetic field intensity magnitude distribution in case 1}
     \label{fig:1.2}
-\end{figure}
+\end{figure} 
+As Figure~\ref{fig:1.2} shows that the magnetic field distribution concentrate near the coils.
+Between two loops, there is a flat area with uniform magnetic field distribution.\\\par
+
+Draw the magnetic lines in the space, and to avoid the lines at the area near the coils are too intensive, 
+the graph cancell some lines.
+\lstinputlisting[firstline = 86]{../work1.m}
 
 \begin{figure}[htbp]
     \centering
     \includegraphics[width = 3.4in]{figures/work1.3.eps}
-    \caption{Magnetic field intensity magnitude distribution}
+    \caption{Magnetic lines distribution in case 1}
     \label{fig:1.3}
 \end{figure}
+As Figure~\ref{fig:1.3} shows that the magnetic lines is around the coils and close to the single current loop in the space
+when far away form the coils. It can be proved from the graph that each magnetic line is closed. And it is axisymmetric.
 
 \section{
   Different Current Direction Loops
  }
 \label{sec: Diff Direction}
+By using MATLAB to simulate the case 2, code and graphs are follow:\par
 
-\lstinputlisting{../work2.m}
+Firstly, initialize and set $a$, $I$ and coordinates as case 1.
+\lstinputlisting[lastline = 13]{../work2.m}
 
+Then depart current loop to N segments, N = 50;
+And calculate the coordinates of each segment center.
+\lstinputlisting[firstline = 15,lastline = 21]{../work2.m}
+
+Calculate the magnetic field intensity of each point by using equation in \ref{eq:Biot-Savart}. And change 
+the current direction of the loop which center is at $O_2$ 
+\lstinputlisting[firstline = 23,lastline = 63]{../work2.m}
+
+Draw the magnetic field intensity vector distribution.
+\lstinputlisting[firstline = 65,lastline = 75]{../work2.m}
 \begin{figure}[htbp]
     \centering
     \includegraphics[width = 3.4in]{figures/work2.1.eps}
-    \caption{Magnetic field intensity magnitude distribution}
+    \caption{Magnetic field intensity vector distribution in case 2}
     \label{fig:2.1}
 \end{figure}
+As Figure~\ref{fig:2.1} shows that the magnetic field intensity vector distribution between two loops are small, 
+because two loops has different current direction, so that the magnetic field vector on yz plane is also opposite, 
+so they cancelled out.\\\par
+
+Draw the magnetic field intensity magnitude distribution in the space.
+\lstinputlisting[firstline = 77,lastline = 84]{../work2.m}
 
 \begin{figure}[htbp]
     \centering
     \includegraphics[width = 3.4in]{figures/work2.2.eps}
-    \caption{Magnetic field intensity magnitude distribution}
+    \caption{Magnetic field intensity magnitude distribution in case 2}
     \label{fig:2.2}
 \end{figure}
+As Figure~\ref{fig:2.2} shows that the magnetic field intensity distribution concentrate near the coils just like case 1.
+However, there is not a flat area with uniform magnetic field distribution between two coils.\\\par
+
+Draw the magnetic line distribution.
+\lstinputlisting[firstline = 86,lastline = 101]{../work2.m}
 
 \begin{figure}[htbp]
     \centering
     \includegraphics[width = 3.4in]{figures/work2.3.eps}
-    \caption{Magnetic field intensity magnitude distribution}
+    \caption{Magnetic lines distribution in case 2}
     \label{fig:2.3}
 \end{figure}
 
+As Figure~\ref{fig:2.3} shows that the magnetic lines is centrosymmetric. And It is not like the first case, 
+the lines near the coils are separate, combine with Figure~\ref{fig:2.2},
+the magnetic feild intensity near coils in case 2 should at different degree (when z > 0, the magnitude should be negtive to 
+the area when z < 0 ).
 \section{
   Inspiration
  }
 \label{sec: Ins}
+To analyze the two cases, they are different with the single current loop. When the current directions are same, 
+the magnetic field is superposed, and at different directions, the magnetic field of each current loop are cancelled out 
+at the area between two loops.\par
+For each magnetic line, it will closed without start point and end point, and they are around the points of 
+the current loops accorss the plane.\par
+In simulation, MATLAB can do the cross product automatic, but to do accumulation, it still depart current loop to small 
+segments.\par
+To analyze the vector on yz plane, the magnitude at x coordinate should be ignored. For better graph, 
+some lines too concentrated should be ignored and the start points of magnetic lines should be selected careful, 
+espacially in case~2. 
 
 
 

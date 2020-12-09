@@ -2,26 +2,22 @@ clear; % clear memory
 clc; % clear comand window
 a = 2; % set radius of the current loops
 I = 500; % set the current of the loop
-C = I / (4 * pi);
-
+C = I / (4 * pi); % merge the constants
 zc1 = -1;
 zc2 = 1; % set location of the center of each loop(x and y are 0)
-
-N = 50; % set the segments number
-ym = 5;
-zm = 5;
-pn = 60; % set the of coordinate
-
-dphi = 2 * pi / N; % set angle of each segment of the loop
-phi = linspace(dphi, 2 * pi - dphi, N); % set angle - coordinates of segments
-
+ym = 5; 
+zm = 5; % set range
+pn = 60; % set accuarcy of coordinates
 y = linspace(-ym, ym, pn);
 z = linspace(-zm, zm, pn);
 [Y, Z] = meshgrid(y, z);
 
+N = 50; % set the segments number
+dphi = 2 * pi / N; % set angle of each segment of the loop
+phi = linspace(dphi, 2 * pi - dphi, N); % set angle - coordinates of segments
+
 xc = a * cos(phi);
 yc = a * sin(phi); % transform angle to xy coordiantes
-
 dl = a * dphi; % set length of each segment
 
 Hx = zeros(pn);
@@ -30,21 +26,15 @@ Hz = zeros(pn);
 H = zeros(pn);
 
 ci = 1;
-
 for bi = y
-
     cj = 1;
-
     for bj = z
-
         dHx = 0;
         dHy = 0;
         dHz = 0;
         dH = 0;
-
         for li = 1:N% calculate magnetic field intensity vector at (bi, bj) of loop1
             R = sqrt((0 - xc(li))^2 + (bi - yc(li))^2 + (bj - zc1)^2);
-
             v_l = dl * [-sin(phi(li)), cos(phi(li)), 0]; % set the vector of dL
             v_r = [0 - xc(li), bi - yc(li), bj - zc1]; % set vector of R
             v_H = cross(v_l, v_r); % calculate value of cross product
@@ -55,7 +45,6 @@ for bi = y
 
         for li = 1:N% calculate magnetic field intensity vector at (bi, bj) of loop2
             R = sqrt((0 - xc(li))^2 + (bi - yc(li))^2 + (bj - zc2)^2);
-
             v_l = -dl * [-sin(phi(li)), cos(phi(li)), 0]; % the direction of elementary is opposite
             v_r = [0 - xc(li), bi - yc(li), bj - zc2];
             v_H = cross(v_l, v_r);
@@ -63,14 +52,11 @@ for bi = y
             dHy = dHy + C * v_H(2) / (R^3);
             dHz = dHz + C * v_H(3) / (R^3);
         end
-
         Hx(cj, ci) = dHx;
         Hy(cj, ci) = dHy;
         Hz(cj, ci) = dHz;
-
         cj = cj + 1;
     end
-
     ci = ci + 1;
 end
 
@@ -99,12 +85,12 @@ hold off;
 
 figure(3);
 ys = linspace(-1.5, 1.5, 10);
-zs = linspace(-0.5, 0.5, 10);
-streamline(Y, Z, Hy, Hz, ys, zs); % plot the vector graph of magnetic field intensity
+zs = linspace(-0.5, 0.5, 10); % set the coordinates of start points
+streamline(Y, Z, Hy, Hz, ys, zs); 
 hold on;
-streamline(Y, Z, -Hy, -Hz, ys, zs);
+streamline(Y, Z, -Hy, -Hz, ys, zs); % plot magnetic lines at 1, 3 quadrant
 streamline(Y, Z, Hy, Hz, -ys, zs);
-streamline(Y, Z, -Hy, -Hz, -ys, zs);
+streamline(Y, Z, -Hy, -Hz, -ys, zs); % plot at 2, 4 quadrant
 
 
 xlabel("Y (units: m)");
