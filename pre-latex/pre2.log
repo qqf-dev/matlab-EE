@@ -1,10 +1,10 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/Debian) (preloaded format=xelatex 2020.11.18)  25 NOV 2020 14:44
+This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/Debian) (preloaded format=xelatex 2020.11.18)  17 DEC 2020 00:35
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**pre
-(./pre.tex
+**pre2
+(./pre2.tex
 LaTeX2e <2020-02-02> patch level 2
 L3 programming layer <2020-02-14> (./IEEEtran.cls
 Document Class: IEEEtran 2015/08/26 V1.8b by Michael Shell
@@ -358,12 +358,12 @@ File: l3backend-xdvipdfmx.def 2020-02-03 L3 backend support: xdvipdfmx
 \l__pdf_internal_box=\box52
 \g__pdf_backend_object_int=\count280
 \g__pdf_backend_annotation_int=\count281
-) (./pre.aux
+) (./pre2.aux
 
 LaTeX Warning: Label `work1.3' multiply defined.
 
 )
-\openout1 = `pre.aux'.
+\openout1 = `pre2.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/ntxmi/m/it on input line 18.
 LaTeX Font Info:    Trying to load font information for OML+ntxmi on input line 18.
@@ -429,13 +429,13 @@ Underfull \vbox (badness 3612) has occurred while \output is active []
  [1
 
 
-] (../V_con.m) (../V_dis.m) [2] (../work1.m) (../work1.m
+] (../hw2/V_con.m) (../hw2/V_dis.m) [2] (../hw2/work1.m) (../hw2/work1.m
 LaTeX Font Info:    Trying to load font information for TS1+pcr on input line 20.
  (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1pcr.fd
 File: ts1pcr.fd 2001/06/04 font definitions for TS1/pcr.
 ))
-File: figures/fig1.1.eps Graphic file (type eps)
-<figures/fig1.1.eps>
+File: figures-2/fig1.1.eps Graphic file (type eps)
+<figures-2/fig1.1.eps>
 
 Underfull \hbox (badness 10000) in paragraph at lines 255--262
 
@@ -446,18 +446,18 @@ Underfull \hbox (badness 1675) in paragraph at lines 255--262
 \T1/ptm/m/n/10 3. Draw pic-ture of Isopo-ten-tial lines to Fig-ure 2[]. Set
  []
 
-(../work1.m
+(../hw2/work1.m
 Missing character: There is no ： in font pcrr8t!
 Missing character: There is no ： in font pcrr8t!
 )
-File: figures/fig1.2.eps Graphic file (type eps)
-<figures/fig1.2.eps>
+File: figures-2/fig1.2.eps Graphic file (type eps)
+<figures-2/fig1.2.eps>
 
 Underfull \hbox (badness 10000) in paragraph at lines 270--277
 
  []
 
-(../work1.m
+(../hw2/work1.m
 Missing character: There is no ： in font pcrr8t!
 Missing character: There is no ： in font pcrr8t!
 Missing character: There is no 绘 in font pcrr8t!
@@ -471,51 +471,51 @@ Missing character: There is no ： in font pcrr8t!
  [3]
 Missing character: There is no ： in font pcrr8t!
 )
-File: figures/fig1.3.eps Graphic file (type eps)
-<figures/fig1.3.eps>
- (../work2.m) (../work2.m)
-File: figures/fig2.1.a.eps Graphic file (type eps)
-<figures/fig2.1.a.eps>
-File: figures/fig2.1.b.eps Graphic file (type eps)
-<figures/fig2.1.b.eps>
-File: figures/fig2.1.c.eps Graphic file (type eps)
-<figures/fig2.1.c.eps>
+File: figures-2/fig1.3.eps Graphic file (type eps)
+<figures-2/fig1.3.eps>
+ (../hw2/work2.m) (../hw2/work2.m)
+File: figures-2/fig2.1.a.eps Graphic file (type eps)
+<figures-2/fig2.1.a.eps>
+File: figures-2/fig2.1.b.eps Graphic file (type eps)
+<figures-2/fig2.1.b.eps>
+File: figures-2/fig2.1.c.eps Graphic file (type eps)
+<figures-2/fig2.1.c.eps>
 
 Underfull \hbox (badness 10000) in paragraph at lines 336--340
 
  []
 
-(../work2.m
+(../hw2/work2.m
 Missing character: There is no ： in font pcrr8t!
 Missing character: There is no ： in font pcrr8t!
  [4])
-File: figures/fig2.2.a.eps Graphic file (type eps)
-<figures/fig2.2.a.eps>
-File: figures/fig2.2.b.eps Graphic file (type eps)
-<figures/fig2.2.b.eps>
-File: figures/fig2.2.c.eps Graphic file (type eps)
-<figures/fig2.2.c.eps>
-File: figures/fig2.3.a.eps Graphic file (type eps)
-<figures/fig2.3.a.eps>
-File: figures/fig2.3.b.eps Graphic file (type eps)
-<figures/fig2.3.b.eps>
-File: figures/fig2.3.c.eps Graphic file (type eps)
-<figures/fig2.3.c.eps>
- (../work2.m
+File: figures-2/fig2.2.a.eps Graphic file (type eps)
+<figures-2/fig2.2.a.eps>
+File: figures-2/fig2.2.b.eps Graphic file (type eps)
+<figures-2/fig2.2.b.eps>
+File: figures-2/fig2.2.c.eps Graphic file (type eps)
+<figures-2/fig2.2.c.eps>
+File: figures-2/fig2.3.a.eps Graphic file (type eps)
+<figures-2/fig2.3.a.eps>
+File: figures-2/fig2.3.b.eps Graphic file (type eps)
+<figures-2/fig2.3.b.eps>
+File: figures-2/fig2.3.c.eps Graphic file (type eps)
+<figures-2/fig2.3.c.eps>
+ (../hw2/work2.m
 Missing character: There is no ： in font pcrr8t!
 Missing character: There is no ： in font pcrr8t!
 Missing character: There is no ： in font pcrr8t!
 Missing character: There is no ： in font pcrr8t!
-) (../work3.m) (../work3.m
+) (../hw2/work3.m) (../hw2/work3.m
 Missing character: There is no ： in font pcrr8t!
 Missing character: There is no ： in font pcrr8t!
 )
-File: figures/fig3.1.a.eps Graphic file (type eps)
-<figures/fig3.1.a.eps>
-File: figures/fig3.1.b.eps Graphic file (type eps)
-<figures/fig3.1.b.eps>
-File: figures/fig3.1.c.eps Graphic file (type eps)
-<figures/fig3.1.c.eps>
+File: figures-2/fig3.1.a.eps Graphic file (type eps)
+<figures-2/fig3.1.a.eps>
+File: figures-2/fig3.1.b.eps Graphic file (type eps)
+<figures-2/fig3.1.b.eps>
+File: figures-2/fig3.1.c.eps Graphic file (type eps)
+<figures-2/fig3.1.c.eps>
  [5]
 Underfull \hbox (badness 10000) in paragraph at lines 418--424
 
@@ -524,61 +524,50 @@ Underfull \hbox (badness 10000) in paragraph at lines 418--424
 
 Underfull \vbox (badness 1122) has occurred while \output is active []
 
- (../work3.m
+ (../hw2/work3.m
 Missing character: There is no ： in font pcrr8t!
 Missing character: There is no ： in font pcrr8t!
 Missing character: There is no ： in font pcrr8t!
 Missing character: There is no ： in font pcrr8t!
 )
-File: figures/fig3.2.eps Graphic file (type eps)
-<figures/fig3.2.eps>
+File: figures-2/fig3.2.eps Graphic file (type eps)
+<figures-2/fig3.2.eps>
 
 Underfull \vbox (badness 2111) has occurred while \output is active []
 
- [6] (../work3.m
+ [6] (../hw2/work3.m
 Missing character: There is no ： in font pcrr8t!
 Missing character: There is no ： in font pcrr8t!
 Missing character: There is no ： in font pcrr8t!
 Missing character: There is no ： in font pcrr8t!
 )
-File: figures/fig3.3.eps Graphic file (type eps)
-<figures/fig3.3.eps>
-
-
-LaTeX Warning: Reference `fig:3.3' on page 7 undefined on input line 463.
-
+File: figures-2/fig3.3.eps Graphic file (type eps)
+<figures-2/fig3.3.eps>
 
 Underfull \hbox (badness 10000) in paragraph at lines 463--466
 
  []
 
-(../work3.m
+(../hw2/work3.m
 Missing character: There is no ： in font pcrr8t!
 Missing character: There is no ： in font pcrr8t!
 Missing character: There is no ： in font pcrr8t!
 Missing character: There is no ： in font pcrr8t!
-)
-
-LaTeX Warning: Reference `tab:error1' on page 7 undefined on input line 505.
-
-[7] (./pre.aux)
+) [7] (./pre2.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
-
-
-LaTeX Warning: There were undefined references.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 7322 strings out of 479819
- 98271 string characters out of 5895845
- 472244 words of memory out of 5000000
+ 7323 strings out of 479819
+ 98532 string characters out of 5895845
+ 472331 words of memory out of 5000000
  24291 multiletter control sequences out of 15000+600000
  646386 words of font info for 143 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 43i,10n,76p,780b,1650s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 43i,10n,76p,781b,1650s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on pre.pdf (7 pages).
+Output written on pre2.pdf (7 pages).

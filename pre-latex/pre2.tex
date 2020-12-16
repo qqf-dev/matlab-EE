@@ -217,7 +217,7 @@ Functions included:
 \label{V_con}
 To calculate the electric field distribution
 by using integration method, namely, it use equation (6) to calculate.
-\lstinputlisting{../V_con.m}
+\lstinputlisting{../hw2/V_con.m}
 
 % V_dis for descrete calculate
 \subsubsection*{
@@ -226,7 +226,7 @@ by using integration method, namely, it use equation (6) to calculate.
 \label{V_dis}
 To calculate the electric field distribution
 by using infinitesimal method, namely, it use equation (8) to calculate.
-\lstinputlisting{../V_dis.m}
+\lstinputlisting{../hw2/V_dis.m}
 
 % work 1
 \section{
@@ -237,17 +237,17 @@ Using MATLAB to describe electric field and draw pictures
 simulated by integration methods.\\
 1. Initialization. Set the coordinates of 4m $\times$ 4m.
 The number of coordinates is 60 $\times$ 60.
-\lstinputlisting[lastline = 14]{../work1.m}
+\lstinputlisting[lastline = 14]{../hw2/work1.m}
 \label{work1.1}
 
 2. Calculate the electric potential distributionby using \ref{func}: $V\_con$.
 And draw picture of the distribution of electric field to Figure~\ref{fig:1.1};
-\lstinputlisting[firstline = 17, lastline =23]{../work1.m}
+\lstinputlisting[firstline = 17, lastline =23]{../hw2/work1.m}
 \label{work1.2}
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width = 3.4in]{figures/fig1.1.eps}
+    \includegraphics[width = 3.4in]{figures-2/fig1.1.eps}
     \caption{Distribution of electric potential simulated by integration method}
     \label{fig:1.1}
 \end{figure}
@@ -259,11 +259,11 @@ the electric potential on the line charge is infinite in fact.\\
 \\
 3. Draw picture of Isopotential lines to Figure~\ref{fig:1.2}.
 Set range of potential is (0, 60) V.
-\lstinputlisting[firstline = 26, lastline =36]{../work1.m}
+\lstinputlisting[firstline = 26, lastline =36]{../hw2/work1.m}
 \label{work1.3}
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width = 3.4in]{figures/fig1.2.eps}
+    \includegraphics[width = 3.4in]{figures-2/fig1.2.eps}
     \caption{Isopotential lines simulated by integration method}
     \label{fig:1.2}
 \end{figure}
@@ -274,11 +274,11 @@ is close to point charge in some ways.
 And It also prove that if the line charge is short enough, it similar to point charge\\
 \\
 4. Draw picture of power lines to Figure~\ref{fig:1.3}.
-\lstinputlisting[firstline = 38, lastline = 51]{../work1.m}
+\lstinputlisting[firstline = 38, lastline = 51]{../hw2/work1.m}
 \label{work1.4}
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width = 3.4in]{figures/fig1.3.eps}
+    \includegraphics[width = 3.4in]{figures-2/fig1.3.eps}
     \caption{Isopotential lines simulated by integration method}
     \label{fig:1.3}
 \end{figure}
@@ -295,7 +295,7 @@ simulated by infinitesimal methods.\\
 1. Initialization. Set the coordinates of 4m $\times$ 4m.
 The number of coordinates is 60 $\times$ 60,
 just similar to \ref{sec:inte}.
-\lstinputlisting[lastline = 15]{../work2.m}
+\lstinputlisting[lastline = 15]{../hw2/work2.m}
 \label{work2.1}
 
 2. Draw three times pictures for different N (20, 50, 100)
@@ -311,21 +311,21 @@ just similar to \ref{sec:inte}.
 
 part 1. Calculate the electric potential distributionby using \ref{func}: $V\_dis$.
 And draw picture of the distribution of electric to Figure~\ref{fig:2.1}.
-\lstinputlisting[firstline = 19, lastline =28]{../work2.m}
+\lstinputlisting[firstline = 19, lastline =28]{../hw2/work2.m}
 \label{work1.3}
 
 \begin{figure}[htbp]
     \centering
     \subfigure[N = 20]{
-        \includegraphics[width = 1.6in]{figures/fig2.1.a.eps}
+        \includegraphics[width = 1.6in]{figures-2/fig2.1.a.eps}
         \label{fig:2.1.a}
     }
     \subfigure[N = 50]{
-        \includegraphics[width = 1.6in]{figures/fig2.1.b.eps}
+        \includegraphics[width = 1.6in]{figures-2/fig2.1.b.eps}
         \label{fig:2.1.b}
     }
     \subfigure[N = 100]{
-        \includegraphics[width = 1.6in]{figures/fig2.1.c.eps}
+        \includegraphics[width = 1.6in]{figures-2/fig2.1.c.eps}
         \label{fig:2.1.c}
 
     }
@@ -333,24 +333,24 @@ And draw picture of the distribution of electric to Figure~\ref{fig:2.1}.
     \caption{Distribution of electric potential simulated by infinitesimal method}
     \label{fig:2.1}
 \end{figure}
-As three figures show, the distribution of electric potential simulated by infinitesimal method.\\
+As three figures-2 show, the distribution of electric potential simulated by infinitesimal method.\\
 \\
 part 2. Draw picture of Isopotential lines to Figure~\ref{fig:2.2}.
 Set range of potential is (0, 60) V.
-\lstinputlisting[firstline = 30, lastline = 40]{../work2.m}
+\lstinputlisting[firstline = 30, lastline = 40]{../hw2/work2.m}
 
 \begin{figure}[htbp]
     \centering
     \subfigure[N = 20]{
-        \includegraphics[width = 1.6in]{figures/fig2.2.a.eps}
+        \includegraphics[width = 1.6in]{figures-2/fig2.2.a.eps}
         \label{fig:2.2.a}
     }
     \subfigure[N = 50]{
-        \includegraphics[width = 1.6in]{figures/fig2.2.b.eps}
+        \includegraphics[width = 1.6in]{figures-2/fig2.2.b.eps}
         \label{fig:2.2.b}
     }
     \subfigure[N = 100]{
-        \includegraphics[width = 1.6in]{figures/fig2.2.c.eps}
+        \includegraphics[width = 1.6in]{figures-2/fig2.2.c.eps}
         \label{fig:2.2.c}
 
     }
@@ -363,15 +363,15 @@ Set range of potential is (0, 60) V.
 \begin{figure}[htbp]
     \centering
     \subfigure[N = 20]{
-        \includegraphics[width = 1.6in]{figures/fig2.3.a.eps}
+        \includegraphics[width = 1.6in]{figures-2/fig2.3.a.eps}
         \label{fig:2.3.a}
     }
     \subfigure[N = 50]{
-        \includegraphics[width = 1.6in]{figures/fig2.3.b.eps}
+        \includegraphics[width = 1.6in]{figures-2/fig2.3.b.eps}
         \label{fig:2.3.b}
     }
     \subfigure[N = 100]{
-        \includegraphics[width = 1.6in]{figures/fig2.3.c.eps}
+        \includegraphics[width = 1.6in]{figures-2/fig2.3.c.eps}
         \label{fig:2.3.c}
 
     }
@@ -381,7 +381,7 @@ Set range of potential is (0, 60) V.
 \end{figure}
 
 part 3. Draw picture of power lines to Figure~\ref{fig:2.3}
-\lstinputlisting[firstline = 42,lastline = 55]{../work2.m}
+\lstinputlisting[firstline = 42,lastline = 55]{../hw2/work2.m}
 
 As Figure~\ref{fig:2.2} and Figure~\ref{fig:2.3} show that,
 simulation by using infinitesimal method is very close to integration method
@@ -394,22 +394,22 @@ simulation by using infinitesimal method is very close to integration method
 
 1. Initialization. Set coordinates as \ref{sec:inte} and \ref{sec:inf}.
 And the real distribution of electric distribution $V_1$ will not change.
-\lstinputlisting[lastline = 16]{../work3.m}
+\lstinputlisting[lastline = 16]{../hw2/work3.m}
 
 2. Draw difference of electric potential distribution between two methods to Figure~\ref{fig:3.1}.
-\lstinputlisting[firstline = 19, lastline = 32]{../work3.m}
+\lstinputlisting[firstline = 19, lastline = 32]{../hw2/work3.m}
 \begin{figure}[htbp]
     \centering
     \subfigure[N = 20]{
-        \includegraphics[width = 3.2in]{figures/fig3.1.a.eps}
+        \includegraphics[width = 3.2in]{figures-2/fig3.1.a.eps}
         \label{fig:3.1.a}
     }
     \subfigure[N = 50]{
-        \includegraphics[width = 3.2in]{figures/fig3.1.b.eps}
+        \includegraphics[width = 3.2in]{figures-2/fig3.1.b.eps}
         \label{fig:3.1.b}
     }
     \subfigure[N = 100]{
-        \includegraphics[width = 3.2in]{figures/fig3.1.c.eps}
+        \includegraphics[width = 3.2in]{figures-2/fig3.1.c.eps}
         \label{fig:3.1.c}
     }
     \caption{Difference between two distributions of electric potential}
@@ -423,11 +423,11 @@ the line near the line charge to analyze the difference is a great choice,
 specifically, let $x \in [-4,4]$, $y = 0.1$.
 When $N = 20$, the difference is bigger, so come from the situation of N = 20 for infinitesimal method.\par
 
-\lstinputlisting[firstline = 34, lastline = 60]{../work3.m}
+\lstinputlisting[firstline = 34, lastline = 60]{../hw2/work3.m}
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width = 3.4in]{figures/fig3.2.eps}
+    \includegraphics[width = 3.4in]{figures-2/fig3.2.eps}
     \caption{Simulation at y = 0.1}
     \label{fig:3.2}
 \end{figure}
@@ -450,11 +450,11 @@ depart x axis to N segments, using the middle point's value as height,
 make rectangular area (width id dx ,the length of segments),
 to replace the area of function and x-axis in the same width.
 
-\lstinputlisting[firstline = 62, lastline = 75]{../work3.m}
+\lstinputlisting[firstline = 62, lastline = 75]{../hw2/work3.m}
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width = 3.4in]{figures/fig3.3.eps}
+    \includegraphics[width = 3.4in]{figures-2/fig3.3.eps}
     \caption{Potential density distribution at point(0, 0.1)}
     \label{fig:3.3}
 \end{figure}
@@ -472,7 +472,7 @@ The error ($\epsilon$) from real value to approximative value is:
     \epsilon = \sum_{i=1}^{N}{\epsilon_i}                                      \\
 \end{equation}
 Find the error at point p for each segment.
-\lstinputlisting[firstline = 77]{../work3.m}
+\lstinputlisting[firstline = 77]{../hw2/work3.m}
 \begin{table}[htbp]
     \renewcommand{\arraystretch}{1.3}
     \caption{Error from infinitesimal method}
